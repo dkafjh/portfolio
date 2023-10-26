@@ -1,1 +1,137 @@
-/*# sourceMappingURL=index.css.map */
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+section,
+article,
+main,
+header,
+footer,
+img nav,
+aside {
+  display: block;
+}
+
+@font-face {
+  font-family: "SDSwagger"; /* 폰트 명 */
+  font-style: normal; /* 폰트 스타일 설정 */
+  font-weight: 100; /* 폰트 투께 */
+  src: url("../font/SDSwaggerTTF.eot"); /* IE9 미만 */
+  src: local("SDSwaggerTTf"), url("../font/SDSwaggerTTF.eot") format("embedded-opentype"), url("../font/SDSwaggerTTF.woff2") format("woff2"), url("../font/SDSwaggerTTF.woff") format("woff"), url("../font/SDSwaggerTTF.ttf") format("truetype");
+}
+@font-face {
+  font-family: "TmonMonsori";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Tium";
+  src: url("../font/Tium.eot");
+  src: url("Tium.eot?#iefix") format("embedded-opentype"), url("../font/Tium.woff2") format("woff2"), url("../font/Tium.woff") format("woff"), url("../font/Tium.ttf") format("truetype"), url("../font/Tium.svg") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+.wrapper {
+  width: 1280px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding-top: 156px;
+}
+
+/*============header===============*/
+header {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1280px;
+  max-width: 1280px;
+  position: fixed;
+  height: 156px;
+}
+header .flex-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .flex-box .gnb {
+  display: flex;
+}
+header .flex-box .gnb li {
+  margin-left: 30px;
+}
+header .flex-box .gnb li a {
+  font-size: 193.75%;
+  font-family: "Tium";
+  color: #fff;
+  line-height: 156px;
+}
+
+/*=========main=============*/
+section.title {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+section.title video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  top: -156px;
+}
+section.title h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0px 0px 5px #000;
+  width: 50%;
+  text-align: center;
+  text-indent: 40px;
+  font-size: 5vw;
+  font-family: "Tium";
+}
+
+section.about-me {
+  background: url(../image/about-bg.png) no-repeat center;
+  background-size: cover;
+}/*# sourceMappingURL=index.css.map */

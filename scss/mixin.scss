@@ -1,0 +1,31 @@
+@mixin about-me() {
+    width: 100vh;
+    height: 100vh;
+    background-color: $about-bg;
+}
+
+@mixin img-box() {
+    width: calc($gird-size * 75%);
+    background-color: $skill-bg;
+    border: 5px solid $black;
+    margin: right;
+}
+
+@mixin text-deco() {
+    color: $white;
+    text-shadow:  0px 0px 5px $black;
+}
+
+@mixin center-pos1() {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+@mixin center-pos2() {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

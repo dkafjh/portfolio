@@ -1,0 +1,81 @@
+@import "./reset.scss";
+@import "./style.scss";
+@import "./mixin.scss";
+
+$header-px: 156px;
+
+.wrapper {
+    width: $gird-size;
+    max-width: $gird-size;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding-top: $header-px;
+}
+
+/*============header===============*/
+
+header {
+    @include center-pos1();
+    width: $gird-size;
+    max-width: $gird-size;
+    position: fixed;
+    height: $header-px;
+    .flex-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .gnb{
+            display: flex;
+            li{
+                margin-left: 30px;
+                a{  
+                    font: {
+                        size: 193.75%;
+                        family: 'Tium'
+                    } 
+                    color: $white;
+                    line-height: 156px;
+                }
+            }
+        }
+    }
+}
+
+/*=========main=============*/
+
+section.title{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    video{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        top: -$header-px;
+    }
+    h2 {
+        @include center-pos2();
+        @include text-deco();
+        width: 50%;
+        text: {
+            align:center;
+            indent: 40px
+        };
+        font: {
+            size:5vw;
+            family: 'Tium'
+        };
+        
+    }
+}
+
+section.about-me {
+    background: url(../image/about-bg.png) no-repeat center;
+    background-size: cover;
+}
