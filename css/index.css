@@ -6,8 +6,9 @@
 }
 
 body {
-  font-size: 1vw;
+  font-family: yoon-a-yoonche, sans-serif;
   font-weight: 200;
+  font-style: normal;
 }
 
 ul,
@@ -21,11 +22,11 @@ a {
 }
 
 h1 {
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.7vw;
+  font-size: 1.7rem;
 }
 
 h3 {
@@ -77,16 +78,16 @@ section {
   height: 100vh;
 }
 
-.my-info {
-  position: relative;
-  margin-top: 8%;
-  width: 75%;
-  height: 65vh;
+.yellow-box {
+  position: absolute;
+  right: 0;
+  width: 70%;
   background-color: #fec929;
   border: 5px solid #000;
-  transform: translateX(35%);
   border-radius: 15px;
+  margin: 0 auto;
   box-shadow: 20px 20px 5px rgba(0, 0, 0, 0.3843137255);
+  margin-top: 5%;
 }
 
 button {
@@ -95,302 +96,155 @@ button {
 
 /*============header===============*/
 header {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 60%;
-  position: fixed;
+  width: 100%;
+  max-width: 1280px;
   height: 156px;
   z-index: 999;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 header .flex-box {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 10px;
 }
-header .flex-box .gnb {
-  display: flex;
+header .flex-box .hambuger-btn {
+  display: block;
+  width: 40px;
+  right: 20%;
 }
-header .flex-box .gnb li {
+header .flex-box .hambuger-btn div {
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin-top: 10px;
+}
+@media all and (min-width: 768px) {
+  header .flex-box .hambuger-btn {
+    display: none;
+  }
+}
+header .flex-box .menu-box {
+  display: none;
+  background-color: rgb(56, 127, 189);
+  padding: 5% 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+}
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box {
+    position: static;
+    display: block;
+    background: none;
+    width: auto;
+    height: auto;
+  }
+}
+header .flex-box .menu-box .hambuger-btn {
   margin-left: 30px;
 }
-header .flex-box .gnb li a {
-  font-size: 193.75%;
-  font-family: "Tium";
-  color: #fff;
-  line-height: 156px;
-  position: relative;
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box .hambuger-btn {
+    display: none;
+  }
 }
-header .flex-box .gnb li a::after {
+header .flex-box .menu-box .gnb {
+  margin-top: 100px;
+}
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box .gnb {
+    margin-top: 0;
+    display: flex;
+  }
+}
+header .flex-box .menu-box .gnb li {
+  padding: 15px 30px;
+  position: relative;
+  border-bottom: 5px solid #fff;
+}
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box .gnb li {
+    padding: 0;
+    margin-right: 30px;
+    border: 0;
+  }
+}
+header .flex-box .menu-box .gnb li a {
+  position: relative;
+  z-index: 2;
+  font-size: 1.9375rem;
+  font-family: "Tium";
+  color: rgb(255, 255, 255);
+  transition: all 0.5s ease-in-out;
+}
+header .flex-box .menu-box .gnb li::before {
   content: "";
   width: 0;
-  height: 3px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
+  height: 100%;
   background-color: #fff;
-  transition: all 0.3s ease-in-out;
+  z-index: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
 }
-header .flex-box .gnb li a:hover::after {
-  top: 100%;
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box .gnb li::before {
+    width: 0;
+    height: 5px;
+  }
+}
+header .flex-box .menu-box .gnb li:hover::before {
   width: 100%;
-  opacity: 1;
+}
+header .flex-box .menu-box .gnb li:hover a {
+  color: rgb(56, 127, 189);
+}
+@media all and (min-width: 768px) {
+  header .flex-box .menu-box .gnb li:hover a {
+    color: #fff;
+  }
 }
 
 /*=========main=============*/
-section.title {
+.title {
   position: relative;
+  overflow: hidden;
 }
-section.title video {
+.title .title-bg {
   position: absolute;
-  height: 150%;
+  position: absolute;
+  left: 50%;
   top: 0;
-  z-index: -1;
+  transform: translateX(-50%);
+  height: 200%;
 }
-section.title h2 {
-  color: #fff;
-  text-shadow: 0px 0px 7px #000;
+.title h2 {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  font-size: 10vw;
+  font-family: "TmonMonsori";
   text-align: center;
-  font-size: 5vw;
-  font-family: "Tium";
-  line-height: 1.3em;
-}
-
-section.about-me {
-  padding-top: 0;
-}
-section.about-me .sublist-slidebox {
-  position: relative;
-}
-section.about-me .sublist-slidebox .sub-list {
-  position: fixed;
-  left: 5%;
-  top: 50%;
-  background-color: #ddd;
-  z-index: 1;
-  transform: translateY(-50%);
-}
-section.about-me .slide-box {
-  width: 400%;
-}
-section.about-me .slide-box .flex-box {
-  display: flex;
-  justify-content: space-between;
-}
-section.about-me .slide-box .flex-box .info {
-  padding-top: 156px;
-  width: 100%;
-  height: 100vh;
-}
-section.about-me .slide-box .flex-box .info:first-child {
-  background: url(../image/about-bg.png) bottom no-repeat;
-  background-size: cover;
-}
-section.about-me .slide-box .flex-box .info:first-child h2 {
+  text-shadow: 15px 15px 15px rgba(102, 102, 102, 0.5490196078);
+  line-height: 1.5em;
   color: #fff;
-  font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
-  position: absolute;
-  left: -40%;
-  font-size: 9vw;
-  z-index: 1;
-  margin-top: 5%;
 }
-section.about-me .slide-box .flex-box .info:first-child h2::after {
-  content: "";
-  left: 0;
-  top: 90%;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  border: 5px solid #000;
+@media all and (min-width: 768px) {
+  .title h2 {
+    font-size: 5vw;
+  }
 }
-section.about-me .slide-box .flex-box .info:first-child .content-box {
-  position: absolute;
-  left: 0;
-  padding: 5%;
-  margin: 25% 10%;
-  width: 80%;
-  background-color: #666;
-  border: 5px solid #000;
-  z-index: 2;
-}
-section.about-me .slide-box .flex-box .info:first-child h3 {
-  position: relative;
-  color: #fff;
-  font-family: "TmonMonsori";
-  -webkit-text-stroke: 5px #000;
-  -webkit-text-stroke: 0;
-  font-size: 1.8vw;
-  z-index: 3;
-  background-color: #666;
-}
-section.about-me .slide-box .flex-box .info:first-child ul {
-  position: relative;
-  z-index: 3;
-  background-color: #666;
-}
-section.about-me .slide-box .flex-box .info:first-child ul li {
-  color: #fff;
-  font-size: 1.5vw;
-  font-weight: bold;
-  margin-top: 2%;
-}
-section.about-me .slide-box .flex-box .info:first-child button {
-  left: 0;
-  top: 80%;
-  position: absolute;
-  background: none;
-  border: 0;
-}
-section.about-me .slide-box .flex-box .info:nth-child(2) {
-  background: url(../image/about-bg2.png);
-}
-section.about-me .slide-box .flex-box .info:nth-child(2) h2 {
-  position: absolute;
-  top: 5%;
-  left: -30%;
-  color: #fff;
-  font-family: "TmonMonsori";
-  -webkit-text-stroke: 5px #000;
-  font-size: 5vw;
-  z-index: 2;
-}
-section.about-me .slide-box .flex-box .info:nth-child(2) h2::after {
-  content: "";
-  left: -20%;
-  top: 100%;
-  position: absolute;
-  width: 150%;
-  height: 10%;
-  background-color: #fff;
-  border: 5px solid #000;
-}
-section.about-me .slide-box .flex-box .info:nth-child(2) h3 {
-  background-color: #666;
-  color: #fff;
-  width: 80%;
-  font-size: 2vw;
-  font-family: "TmonMonsori";
-}
-section.about-me .slide-box .flex-box .info:nth-child(3) {
-  background: url(../image/about-bg2.png);
-}
-section.about-me .slide-box .flex-box .info:nth-child(3) h2 {
-  position: absolute;
-  top: 5%;
-  left: -30%;
-  color: #fff;
-  font-family: "TmonMonsori";
-  -webkit-text-stroke: 5px #000;
-  font-size: 5vw;
-  z-index: 2;
-}
-section.about-me .slide-box .flex-box .info:nth-child(3) h2::after {
-  content: "";
-  left: -20%;
-  top: 100%;
-  position: absolute;
-  width: 150%;
-  height: 10%;
-  background-color: #fff;
-  border: 5px solid #000;
-}
-section.about-me .slide-box .flex-box .info:nth-child(3) h3 {
-  background-color: #666;
-  color: #fff;
-  width: 80%;
-  font-size: 2vw;
-  font-family: "TmonMonsori";
-}
-section.about-me .slide-box .flex-box .info:nth-child(4) {
-  background: url(../image/about-bg2.png);
-}
-section.about-me .slide-box .flex-box .info:nth-child(4) h2 {
-  position: absolute;
-  top: 5%;
-  left: -30%;
-  color: #fff;
-  font-family: "TmonMonsori";
-  -webkit-text-stroke: 5px #000;
-  font-size: 5vw;
-  z-index: 2;
-}
-section.about-me .slide-box .flex-box .info:nth-child(4) h2::after {
-  content: "";
-  left: -20%;
-  top: 100%;
-  position: absolute;
-  width: 150%;
-  height: 10%;
-  background-color: #fff;
-  border: 5px solid #000;
-}
-section.about-me .slide-box .flex-box .info:nth-child(4) h3 {
-  background-color: #666;
-  color: #fff;
-  width: 80%;
-  font-size: 2vw;
-  font-family: "TmonMonsori";
-}
-
-.skills {
-  background: url(../image/skill-bg.png) no-repeat center bottom;
-  background-size: cover;
-}
-.skills .flex-box {
-  display: flex;
-  justify-content: space-between;
-}
-.skills .flex-box h2 {
-  color: #fff;
-  font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
-  font-size: 8vw;
-}
-.skills .flex-box button {
-  background: none;
-  border: 0;
-}
-.skills hr {
-  border: 5px solid #000;
-  padding: 0.5%;
-  background-color: #fff;
-  margin: 1% 0 3% 0;
-}
-.skills .skills-info {
-  width: 100%;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  border: 5px solid #000;
-  padding: 8% 3%;
-  border-radius: 15px;
-  box-shadow: 15px 15px rgba(0, 0, 0, 0.5254901961);
-}
-.skills .skills-info button {
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-.skills .skills-info .slide-box {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 258px;
-  overflow: hidden;
-  grid-column-gap: 5%;
-  align-items: center;
-}
-.skills .skills-info .slide-box li {
-  margin: 0 auto;
+@media all and (min-width: 1024px) {
+  .title h2 {
+    font-size: 4vw;
+  }
 }/*# sourceMappingURL=index.css.map */

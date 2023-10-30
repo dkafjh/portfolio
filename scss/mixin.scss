@@ -5,12 +5,15 @@
 }
 
 @mixin img-box() {
-    width: 75%;
-    height: 65vh;
+    position: absolute;
+    right: 0;
+    width: 70%;
     background-color: $skill-bg;
     border: 5px solid $black;
-    transform: translateX(35%);
     border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 20px 20px 5px #00000062;
+    margin-top: 5%;
 }
 
 @mixin flex() {
@@ -64,3 +67,26 @@
     background-color: $white;
     transition: all 0.3s ease-in-out;
 }
+
+// 반응형
+
+@mixin responsive($break) {
+    @if $break == small-screens {
+        @media all and (min-width:$break-small) {
+            @content;
+        }
+    }
+
+    @else if $break == medium-screens {
+        @media all and (min-width:$break-medium) {
+            @content;
+        }
+    }
+
+    @else if $break == large-screens {
+        @media all and (min-width:$break-large) {
+            @content;
+        }
+    }
+}
+

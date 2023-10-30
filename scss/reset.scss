@@ -5,10 +5,9 @@
 }
 
 body {
-    font: {
-        size: 1vw;
-        weight: 200;
-    } 
+    font-family: yoon-a-yoonche, sans-serif;
+    font-weight: 200;
+    font-style: normal;
 }
 
 ul,
@@ -22,11 +21,11 @@ a {
 }
 
 h1 {
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 1.7vw;
+    font-size: 1.7rem;
 }
 
 h3 {
@@ -43,3 +42,7 @@ nav,
 aside {
     display: block;
 }
+
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1024px;
