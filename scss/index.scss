@@ -179,24 +179,28 @@ section.about-me{
         top: 20%;
         transform: translateX(-50%);
         z-index: 9999;
-        @include responsive(large-screens) {
-            left: 5%;
+        @media screen and (min-width: $gird-size) {
+            left: 10%;
             top: 50%;
-            transform: translateY(-50%)
-        }
+            transform: translateY(-50%);
+        } 
         ul{
             display: flex;
             justify-content: space-between;
-            @include responsive(large-screens) {
+            @media screen and (min-width: $gird-size) {
                 display: block;
-            }
+            } 
             li{
                 list-style: disc;
                 color: #fff;
                 list-style-position: inside;
                 margin-left: 10px;
+                @media screen and (min-width: $gird-size) {
+                    margin-left: 0;
+                    margin-top: 20px;
+                } 
                 &:hover a{
-                    letter-spacing: 10px;
+                    letter-spacing: 2px;
                 }
                 a{
                     font: {
@@ -226,8 +230,10 @@ section.about-me{
                 .about-title{
                     margin-top: 30vh;
                     @include responsive(medium-screens) {
+                        margin-top: 0;
                         position: absolute;
-                        left: 5vmin;
+                        left: 10%;
+                        top: 0;
                     }
                     h2{
                         position: relative;
@@ -236,6 +242,7 @@ section.about-me{
                         text-align: center;
                         @include responsive(medium-screens) {
                             text-align: left;
+                            font-size: 13vmin;
                         }
                         &:after{
                             content: '';
@@ -247,6 +254,10 @@ section.about-me{
                             left: 0;
                             bottom: -10px;
                             z-index: 0;
+                            @include responsive(medium-screens) {
+                                height: 100%;
+                                bottom: -100%;
+                            }
                         }
                     }
                     .img-box{
@@ -258,36 +269,66 @@ section.about-me{
                     padding: 3%;
                     background-color: $skill-bg;
                     border-radius: 10px;
+                    box-shadow: 10px 10px 5px  #101010a3;
                     @include borderblack();
                     @include responsive(medium-screens) {
-                        margin-top: 40vmin;
+                        margin-top: 30vmin;
+                        width: 65%;
+                        padding-top: 20vmin;
+                        margin-left: 30vmin;
                     }
+                    @media screen and (min-width: ($gird-size + 20) ) {
+                        position: absolute;
+                        width: 65%;
+                        right: 0;
+                        margin-top: 20vmin;
+                    } 
                     .content-box{
                         padding: 5%;
                         background-color: #666;
                         @include borderblack();
+                        @include responsive(medium-screens) {
+                            position: relative;
+                            z-index: 1;
+                        }
                         h3{
                             color: #fff;
                             font-size: 5vmin;
                             margin-bottom: 10%;
+                            @include responsive(medium-screens) {
+                                font-size: 4vmin;
+                            }
                         }
                         li{
                             color: #fff;
                             font-size: 4vmin;
                             margin-top: 3vmin;
+                            @include responsive(medium-screens) {
+                                font-size: 3vmin;
+                            }
                         }
                     }
                 }
                 .btn{
                     margin-top: 7%;
                     position: relative;
+                    @include responsive(medium-screens) {
+                        margin-top: -20%;
+                    }
                     button{
                         @include center-pos1();
                         background: none;
                         border: 0;
+                        @include responsive(medium-screens) {
+                            left: 10%;
+                            transform: translate(0);
+                        }
                         img{
                             width: 60%;
                             animation: updown 1s infinite;
+                            @include responsive(medium-screens) {
+                                width: 100%;
+                            }
                         }
                     }
                 }
@@ -331,7 +372,55 @@ section.about-me{
     }
 }
 
-.skills{
-    background: url(../image/skill-bg.png) no-repeat center;
+.skills {
+    background: url(../image/skill-bg.png) no-repeat center bottom;
     background-size: cover;
-} 
+    .flex-box{
+        @include flex();
+        h2 {
+            @include hn-eng();
+            font-size: 22vmin;
+        }
+        button{
+            background: none;
+            border: 0;
+        }
+    }
+    hr {
+        @include borderblack();
+        padding: 0.5%;
+        background-color: $white;
+        margin: 1% 0 3% 0;
+    }
+    .skills-info{
+        width: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        border: 5px solid $black;
+        padding: 8% 3%;
+        border-radius: 15px;
+        box-shadow: 15px 15px #00000086;
+        button{
+            background: none;
+            border: 0;
+            cursor: pointer;
+        }
+        .slide-box{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 10%;
+            overflow: hidden;
+            grid-column-gap: 5%;
+            align-items: center;
+            li{
+                margin: 0 auto;
+                img{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
