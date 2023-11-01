@@ -80,8 +80,8 @@ header {
             height: 100vh;
 
             @include responsive(medium-screens) {
-                position: static;
                 display: block;
+                position: static;
                 background: none;
                 width: auto;
                 height: auto;
@@ -115,16 +115,21 @@ header {
                     }
 
                     a {
+                        width: 100%;
                         position: relative;
                         z-index: 2;
 
                         font: {
-                            size: 4vmin;
+                            size: 2em;
                             family: 'Tium';
                         }
 
                         color: rgb(255, 255, 255);
                         transition: all 0.5s ease-in-out;
+
+                        @include responsive(medium-screens) {
+                            transition: none;
+                        }
                     }
 
                     &::before {
@@ -174,6 +179,7 @@ header {
 
     h2 {
         @include center-pos2();
+        width: 90%;
 
         font: {
             size: 10vw;
@@ -189,82 +195,87 @@ header {
         color: $white;
 
         @include responsive(medium-screens) {
-            font-size: 5vw;
+            font-size: 6vw;
+        }
+
+        @include responsive(medium-screens) {
+            font-size: 8vw;
         }
 
         // PC
         @include responsive(large-screens) {
-            font-size: 4vw;
+            font-size: 6vw;
         }
     }
 }
 
 /* About Me Styles */
 section.about-me {
+    width: 100%;
     padding: 0;
-
     .wrapper {
-        position: relative;
-
         .sub-list {
             position: fixed;
-            width: max-content;
+            width: 90%;
+            top: 15%;
             left: 50%;
-            top: 20%;
-            transform: translateX(-50%);
-            z-index: 9999;
-
-            @include responsive(medium-screens) {
-                left: 5vw;
-                transform: translate(0);
-            }
-
-            @media screen and (min-width: $normal-screen) {
-                left: 5%;
+            transform: translate(-50%);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            grid-column-gap: 10%;
+            z-index: 99;
+            background-color: $white;
+            padding: 3% 2%;
+            border-radius: 10px;
+            border: 5px solid $black;
+            @include responsive(large-screens){
+                width: max-content;
+                display: block;
+                border: 0;
+                background: none;
+                left: 2%;
                 top: 50%;
                 transform: translateY(-50%);
             }
 
-            ul {
-                display: flex;
-                justify-content: space-between;
-
-                @include responsive(medium-screens) {
-                    justify-content: left;
+            li {
+                width: 100%;
+                color: #fff;
+                // list-style-position: inside;
+                // list-style: disc;
+                text-align: center;
+                &:hover a::after{
+                    height: 100%;
                 }
-
-                @media screen and (min-width: $normal-screen) {
-                    display: block;
-                }
-
-                li {
-                    color: #fff;
+                @include responsive(large-screens) {
                     list-style-position: inside;
                     list-style: disc;
-                    margin-left: 20px;
-
-                    @media screen and (min-width: $normal-screen) {
-                        margin-left: 0;
-                        margin-top: 20px;
+                    font-size: 1.5em;
+                    margin-bottom: 20px;
+                }
+                a {
+                    position: relative;
+                    font: {
+                        size: 1.5em;
+                        family: $hn-eng
                     }
-
-                    a {
-                        font: {
-                            size: 6vmin;
-                            family: $hn-eng;
-                        }
-
-                        color: $white;
-
-                        @include responsive(medium-screens) {
-                            font-size: 3em;
-                        }
-
+                    color: $black;
+                    &::after{
+                        content: '';
+                        width: 5px;
+                        height: 0;
+                        position: absolute;
+                        background-color: #000000;
+                        margin-left: 10px;
                         transition: all 0.5s ease-in-out;
-
-                        &:hover {
-                            letter-spacing: 2px;
+                        @include responsive(large-screens) {
+                            background-color: #fff;
+                            width: 10px;
+                            bottom: 0;
                         }
+                    }
+                    @include responsive(large-screens) {
+                        color: #fff;
                     }
                 }
             }
@@ -298,6 +309,12 @@ section.about-me {
                             width: max-content;
                             @include hn-eng();
                             font-size: 20vmin;
+                            @include responsive(medium-screens) {
+                                font-size: 8em;
+                            }
+                            @include responsive(large-screens) {
+                                font-size: 12em;
+                            }
 
                             // 첫 번째 h2 요소에 대한 스타일
                             &::after {
@@ -329,13 +346,14 @@ section.about-me {
                             position: absolute;
                             right: 5%;
                             top: 20%;
-                            transform: translate(-20%);
+                            transform: translateY(-20%);
+                            z-index: 4;
 
                             button {
                                 width: 100%;
+                                height: max-content;
                                 background: none;
                                 border: 0;
-                                position: relative;
 
                                 &:hover img:last-child {
                                     transform: translate(50%, 10%);
@@ -343,19 +361,16 @@ section.about-me {
 
                                 img {
                                     width: 100%;
-                                    position: absolute;
-
                                     &:first-child {
                                         left: 0;
                                         top: 0;
-                                        transform: translateY(-20%);
+                                        transform: translateY(80%);
                                     }
-
                                     &:last-child {
                                         width: 80%;
                                         top: 0;
                                         left: 0;
-                                        transform: translate(-25%, 10%);
+                                        transform: translate(-30%, 10%);
                                         transition: all 0.5s ease-in-out;
                                     }
                                 }

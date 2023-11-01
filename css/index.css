@@ -34,6 +34,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+p {
+  font-size: 1em;
+}
+
 section,
 article,
 main,
@@ -123,7 +127,7 @@ header .flex-box .hambuger-btn div {
   background-color: #fff;
   margin-top: 10px;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .hambuger-btn {
     display: none;
   }
@@ -138,10 +142,10 @@ header .flex-box .menu-box {
   width: 70%;
   height: 100vh;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box {
-    position: static;
     display: block;
+    position: static;
     background: none;
     width: auto;
     height: auto;
@@ -150,7 +154,7 @@ header .flex-box .menu-box {
 header .flex-box .menu-box .hambuger-btn {
   margin-left: 30px;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box .hambuger-btn {
     display: none;
   }
@@ -158,7 +162,7 @@ header .flex-box .menu-box .hambuger-btn {
 header .flex-box .menu-box .gnb {
   margin-top: 100px;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box .gnb {
     margin-top: 0;
     display: flex;
@@ -169,7 +173,7 @@ header .flex-box .menu-box .gnb li {
   position: relative;
   border-bottom: 5px solid #fff;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box .gnb li {
     padding: 0;
     margin-right: 30px;
@@ -177,12 +181,18 @@ header .flex-box .menu-box .gnb li {
   }
 }
 header .flex-box .menu-box .gnb li a {
+  width: 100%;
   position: relative;
   z-index: 2;
-  font-size: 4vmin;
+  font-size: 2em;
   font-family: "Tium";
   color: rgb(255, 255, 255);
   transition: all 0.5s ease-in-out;
+}
+@media all and (min-width: 1024px) {
+  header .flex-box .menu-box .gnb li a {
+    transition: none;
+  }
 }
 header .flex-box .menu-box .gnb li::before {
   content: "";
@@ -195,7 +205,7 @@ header .flex-box .menu-box .gnb li::before {
   left: 0;
   transition: all 0.4s ease-in-out;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box .gnb li::before {
     width: 0;
     height: 5px;
@@ -207,7 +217,7 @@ header .flex-box .menu-box .gnb li:hover::before {
 header .flex-box .menu-box .gnb li:hover a {
   color: rgb(56, 127, 189);
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   header .flex-box .menu-box .gnb li:hover a {
     color: #fff;
   }
@@ -231,6 +241,7 @@ header .flex-box .menu-box .gnb li:hover a {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
   font-size: 10vw;
   font-family: "TmonMonsori";
   text-align: center;
@@ -238,85 +249,95 @@ header .flex-box .menu-box .gnb li:hover a {
   line-height: 1.5em;
   color: #fff;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1024px) {
   .title h2 {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 }
 @media all and (min-width: 1024px) {
   .title h2 {
-    font-size: 4vw;
+    font-size: 8vw;
+  }
+}
+@media all and (min-width: 1600px) {
+  .title h2 {
+    font-size: 6vw;
   }
 }
 
 /* About Me Styles */
 section.about-me {
+  width: 100%;
   padding: 0;
-}
-section.about-me .wrapper {
-  position: relative;
 }
 section.about-me .wrapper .sub-list {
   position: fixed;
-  width: -moz-max-content;
-  width: max-content;
+  width: 90%;
+  top: 15%;
   left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  z-index: 9999;
+  transform: translate(-50%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10%;
+  z-index: 99;
+  background-color: #fff;
+  padding: 3% 2%;
+  border-radius: 10px;
+  border: 5px solid #000;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1600px) {
   section.about-me .wrapper .sub-list {
-    left: 5vw;
-    transform: translate(0);
-  }
-}
-@media screen and (min-width: 1440px) {
-  section.about-me .wrapper .sub-list {
-    left: 5%;
+    width: max-content;
+    display: block;
+    border: 0;
+    background: none;
+    left: 2%;
     top: 50%;
     transform: translateY(-50%);
   }
 }
-section.about-me .wrapper .sub-list ul {
-  display: flex;
-  justify-content: space-between;
-}
-@media all and (min-width: 768px) {
-  section.about-me .wrapper .sub-list ul {
-    justify-content: left;
-  }
-}
-@media screen and (min-width: 1440px) {
-  section.about-me .wrapper .sub-list ul {
-    display: block;
-  }
-}
-section.about-me .wrapper .sub-list ul li {
+section.about-me .wrapper .sub-list li {
+  width: 100%;
   color: #fff;
-  list-style-position: inside;
-  list-style: disc;
-  margin-left: 20px;
+  text-align: center;
 }
-@media screen and (min-width: 1440px) {
-  section.about-me .wrapper .sub-list ul li {
-    margin-left: 0;
-    margin-top: 20px;
+section.about-me .wrapper .sub-list li:hover a::after {
+  height: 100%;
+}
+@media all and (min-width: 1600px) {
+  section.about-me .wrapper .sub-list li {
+    list-style-position: inside;
+    list-style: disc;
+    font-size: 1.5em;
+    margin-bottom: 20px;
   }
 }
-section.about-me .wrapper .sub-list ul li a {
-  font-size: 6vmin;
+section.about-me .wrapper .sub-list li a {
+  position: relative;
+  font-size: 1.5em;
   font-family: "SDSwagger";
-  color: #fff;
+  color: #000;
+}
+section.about-me .wrapper .sub-list li a::after {
+  content: "";
+  width: 5px;
+  height: 0;
+  position: absolute;
+  background-color: #000000;
+  margin-left: 10px;
   transition: all 0.5s ease-in-out;
 }
-@media all and (min-width: 768px) {
-  section.about-me .wrapper .sub-list ul li a {
-    font-size: 3em;
+@media all and (min-width: 1600px) {
+  section.about-me .wrapper .sub-list li a::after {
+    background-color: #fff;
+    width: 10px;
+    bottom: 0;
   }
 }
-section.about-me .wrapper .sub-list ul li a:hover {
-  letter-spacing: 2px;
+@media all and (min-width: 1600px) {
+  section.about-me .wrapper .sub-list li a {
+    color: #fff;
+  }
 }
 section.about-me .slide-box .flex-box {
   width: 400%;
@@ -341,12 +362,21 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title {
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
   position: absolute;
   top: 11vmin;
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 1px #000;
   font-size: 20vmin;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    font-size: 8em;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    font-size: 12em;
+  }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
   content: "";
@@ -374,31 +404,31 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
   position: absolute;
   right: 5%;
   top: 20%;
-  transform: translate(-20%);
+  transform: translateY(-20%);
+  z-index: 4;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
   width: 100%;
+  height: max-content;
   background: none;
   border: 0;
-  position: relative;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button:hover img:last-child {
   transform: translate(50%, 10%);
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img {
   width: 100%;
-  position: absolute;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img:first-child {
   left: 0;
   top: 0;
-  transform: translateY(-20%);
+  transform: translateY(80%);
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img:last-child {
   width: 80%;
   top: 0;
   left: 0;
-  transform: translate(-25%, 10%);
+  transform: translate(-30%, 10%);
   transition: all 0.5s ease-in-out;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
@@ -443,7 +473,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .about-title {
 section.about-me .slide-box .flex-box .info:nth-child(2) .about-title h2 {
   position: absolute;
   top: 7vmin;
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -491,7 +520,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-bo
   z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 5vmin;
@@ -530,7 +558,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .about-title {
 section.about-me .slide-box .flex-box .info:nth-child(3) .about-title h2 {
   position: absolute;
   top: 7vmin;
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -578,7 +605,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-bo
   z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 5vmin;
@@ -617,7 +643,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .about-title {
 section.about-me .slide-box .flex-box .info:nth-child(4) .about-title h2 {
   position: absolute;
   top: 7vmin;
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -665,7 +690,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-bo
   z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 5vmin;
