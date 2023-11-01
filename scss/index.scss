@@ -4,10 +4,16 @@
 
 $header-px: 156px;
 
-@keyframes updown{
-    from {transform: translateY(0);}
-    50%{transform: translateY(-40%);}
-    to {transform: translateY(0);}
+@keyframes updown {
+    from {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .wrapper {
@@ -24,20 +30,21 @@ section {
     height: 100vh;
 }
 
-button{
+button {
     cursor: pointer;
 }
-/*============header===============*/
 
+/* Header Styles */
 header {
-    width:100%;
+    width: 100%;
     max-width: $gird-size;
     height: $header-px;
     z-index: 999;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    .flex-box{
+
+    .flex-box {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -45,21 +52,24 @@ header {
         margin: 0 auto;
         padding: 30px 10px;
 
-        .hambuger-btn{
+        .hambuger-btn {
             display: block;
             width: 40px;
             right: 20%;
-            div{
+
+            div {
                 width: 100%;
                 height: 5px;
                 background-color: $white;
                 margin-top: 10px;
             }
+
             @include responsive(medium-screens) {
                 display: none;
             }
         }
-        .menu-box{
+
+        .menu-box {
             display: none;
             background-color: rgb(56, 127, 189);
             padding: 5% 0;
@@ -68,45 +78,56 @@ header {
             right: 0;
             width: 70%;
             height: 100vh;
+
             @include responsive(medium-screens) {
                 position: static;
                 display: block;
-                background:none;
-                width:auto;
+                background: none;
+                width: auto;
                 height: auto;
             }
-            .hambuger-btn{
+
+            .hambuger-btn {
                 margin-left: 30px;
+
                 @include responsive(medium-screens) {
                     display: none;
                 }
             }
-            .gnb{
+
+            .gnb {
                 margin-top: 100px;
+
                 @include responsive(medium-screens) {
                     margin-top: 0;
                     display: flex;
                 }
-                li{
+
+                li {
                     padding: 15px 30px;
                     position: relative;
                     border-bottom: 5px solid #fff;
+
                     @include responsive(medium-screens) {
                         padding: 0;
                         margin-right: 30px;
                         border: 0;
                     }
-                    a{  
+
+                    a {
                         position: relative;
                         z-index: 2;
+
                         font: {
                             size: 4vmin;
-                            family: 'Tium'
-                            }
+                            family: 'Tium';
+                        }
+
                         color: rgb(255, 255, 255);
                         transition: all 0.5s ease-in-out;
                     }
-                    &::before{
+
+                    &::before {
                         content: "";
                         width: 0;
                         height: 100%;
@@ -114,254 +135,365 @@ header {
                         z-index: 0;
                         position: absolute;
                         bottom: 0;
-                        left:  0;
+                        left: 0;
                         transition: all 0.4s ease-in-out;
+
                         @include responsive(medium-screens) {
                             width: 0;
                             height: 5px;
                         }
-                        }
-                    &:hover::before{
+                    }
+
+                    &:hover::before {
                         width: 100%;
-                        }
-                    &:hover a{
+                    }
+
+                    &:hover a {
                         color: rgb(56, 127, 189);
+
                         @include responsive(medium-screens) {
                             color: #fff;
                         }
-                        }
+                    }
                 }
             }
         }
     }
-}   
+}
 
-
-/*=========main=============*/
-
-.title{
+/* Main Styles */
+.title {
     position: relative;
     overflow: hidden;
-    .title-bg{
+
+    .title-bg {
         position: absolute;
         @include center-pos1();
-            height:200%;
-        }
-    h2{
+        height: 200%;
+    }
+
+    h2 {
         @include center-pos2();
+
         font: {
             size: 10vw;
             family: $hn-ko;
         }
+
         text: {
             align: center;
             shadow: 15px 15px 15px #6666668c;
         }
+
         line-height: 1.5em;
         color: $white;
+
         @include responsive(medium-screens) {
             font-size: 5vw;
         }
-    
-        //pc
+
+        // PC
         @include responsive(large-screens) {
             font-size: 4vw;
         }
     }
 }
 
-section.about-me{
+/* About Me Styles */
+section.about-me {
     padding: 0;
-    .sub-list{
-        position: fixed;
-        width: 80%;
-        left: 50%;
-        top: 20%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        @media screen and (min-width: $gird-size) {
-            left: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-        } 
-        ul{
-            display: flex;
-            justify-content: space-between;
-            @media screen and (min-width: $gird-size) {
-                display: block;
-            } 
-            li{
-                list-style: disc;
-                color: #fff;
-                list-style-position: inside;
-                margin-left: 10px;
-                @media screen and (min-width: $gird-size) {
-                    margin-left: 0;
-                    margin-top: 20px;
-                } 
-                &:hover a{
-                    letter-spacing: 2px;
+
+    .wrapper {
+        position: relative;
+
+        .sub-list {
+            position: fixed;
+            width: max-content;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+            z-index: 9999;
+
+            @include responsive(medium-screens) {
+                left: 5vw;
+                transform: translate(0);
+            }
+
+            @media screen and (min-width: $normal-screen) {
+                left: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+
+                @include responsive(medium-screens) {
+                    justify-content: left;
                 }
-                a{
-                    font: {
-                        size: 6vmin;
-                        family: $hn-eng;
+
+                @media screen and (min-width: $normal-screen) {
+                    display: block;
+                }
+
+                li {
+                    color: #fff;
+                    list-style-position: inside;
+                    list-style: disc;
+                    margin-left: 20px;
+
+                    @media screen and (min-width: $normal-screen) {
+                        margin-left: 0;
+                        margin-top: 20px;
                     }
-                    color: $white;
-                    @include responsive(medium-screens) {
-                        font-size: 2em;
+
+                    a {
+                        font: {
+                            size: 6vmin;
+                            family: $hn-eng;
+                        }
+
+                        color: $white;
+
+                        @include responsive(medium-screens) {
+                            font-size: 3em;
+                        }
+
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover {
+                            letter-spacing: 2px;
+                        }
                     }
-                    transition: all 0.5s ease-in-out;
                 }
             }
         }
     }
+
     .slide-box {
-        .flex-box{
+        .flex-box {
             width: 400%;
             display: flex;
             justify-content: space-between;
+
             .info {
-                position: relative;
+                padding-top: $header-px;
                 width: (400% / 4);
                 height: 100vh;
                 background: url(../image/about-bg.png) no-repeat bottom right;
-                background-size:cover;
-                .about-title{
-                    margin-top: 30vh;
-                    @include responsive(medium-screens) {
-                        margin-top: 0;
-                        position: absolute;
-                        left: 10%;
-                        top: 0;
-                    }
-                    h2{
+                background-size: cover;
+
+                .grid-box {
+                    display: grid;
+                    grid-template-columns: 3fr 9fr;
+                    grid-column-gap: 40px;
+
+                    .about-title {
                         position: relative;
-                        @include hn-ko();
-                        font-size: 12vw;
-                        text-align: center;
-                        @include responsive(medium-screens) {
-                            text-align: left;
-                            font-size: 13vmin;
-                        }
-                        &:after{
-                            content: '';
+
+                        h2 {
                             position: absolute;
-                            width: 100%;
-                            height: 10px;
-                            background-color: #ffffff;
-                            border: 5px solid $black;
-                            left: 0;
-                            bottom: -10px;
-                            z-index: 0;
-                            @include responsive(medium-screens) {
-                                height: 100%;
+                            top: 11vmin;
+                            width: max-content;
+                            @include hn-eng();
+                            font-size: 20vmin;
+
+                            // 첫 번째 h2 요소에 대한 스타일
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
                                 bottom: -100%;
-                            }
-                        }
-                    }
-                    .img-box{
-                        display: none;
-                    }
-                }
-                .yellow-box{
-                    margin-top: 4%;
-                    padding: 3%;
-                    background-color: $skill-bg;
-                    border-radius: 10px;
-                    box-shadow: 10px 10px 5px  #101010a3;
-                    @include borderblack();
-                    @include responsive(medium-screens) {
-                        margin-top: 30vmin;
-                        width: 65%;
-                        padding-top: 20vmin;
-                        margin-left: 30vmin;
-                    }
-                    @media screen and (min-width: ($gird-size + 20) ) {
-                        position: absolute;
-                        width: 65%;
-                        right: 0;
-                        margin-top: 20vmin;
-                    } 
-                    .content-box{
-                        padding: 5%;
-                        background-color: #666;
-                        @include borderblack();
-                        @include responsive(medium-screens) {
-                            position: relative;
-                            z-index: 1;
-                        }
-                        h3{
-                            color: #fff;
-                            font-size: 5vmin;
-                            margin-bottom: 10%;
-                            @include responsive(medium-screens) {
-                                font-size: 4vmin;
-                            }
-                        }
-                        li{
-                            color: #fff;
-                            font-size: 4vmin;
-                            margin-top: 3vmin;
-                            @include responsive(medium-screens) {
-                                font-size: 3vmin;
-                            }
-                        }
-                    }
-                }
-                .btn{
-                    margin-top: 7%;
-                    position: relative;
-                    @include responsive(medium-screens) {
-                        margin-top: -20%;
-                    }
-                    button{
-                        @include center-pos1();
-                        background: none;
-                        border: 0;
-                        @include responsive(medium-screens) {
-                            left: 10%;
-                            transform: translate(0);
-                        }
-                        img{
-                            width: 60%;
-                            animation: updown 1s infinite;
-                            @include responsive(medium-screens) {
+                                @include borderblack();
                                 width: 100%;
+                                height: 100%;
+                                background-color: $white;
+                                z-index: 3;
                             }
                         }
                     }
-                }
-                @for $i from 2 through 4{
-                    &:nth-child(#{$i}){
-                        .yellow-box{
-                            margin-top: 3vmin;
-                            padding: 2vmin;
-                            background-color: $skill-bg;
-                            border-radius: 10px;
-                            @include borderblack();
-                            .content-box{
-                                padding: 5%;
+
+                    .yellow-box {
+                        width: 100%;
+                        height: 90%;
+                        margin-top: 10vmin;
+                        background-color: $skill-bg;
+                        border-radius: 10px;
+                        box-shadow: 10px 10px 5px #101010a3;
+                        padding: 10% 3% 1% 10%;
+                        @include borderblack();
+
+                        .btn-area {
+                            width: 8%;
+                            position: absolute;
+                            right: 5%;
+                            top: 20%;
+                            transform: translate(-20%);
+
+                            button {
+                                width: 100%;
                                 background: none;
                                 border: 0;
-                                h3{
+                                position: relative;
+
+                                &:hover img:last-child {
+                                    transform: translate(50%, 10%);
+                                }
+
+                                img {
+                                    width: 100%;
+                                    position: absolute;
+
+                                    &:first-child {
+                                        left: 0;
+                                        top: 0;
+                                        transform: translateY(-20%);
+                                    }
+
+                                    &:last-child {
+                                        width: 80%;
+                                        top: 0;
+                                        left: 0;
+                                        transform: translate(-25%, 10%);
+                                        transition: all 0.5s ease-in-out;
+                                    }
+                                }
+                            }
+                        }
+
+                        .content-box {
+                            margin-top: 15%;
+                            position: relative;
+                            z-index: 3;
+                            padding: 3%;
+                            background-color: #666;
+                            @include borderblack();
+
+                            h3 {
+                                color: #fff;
+                                font-size: 5vmin;
+                                margin-bottom: 5%;
+                            }
+
+                            li {
+                                color: #fff;
+                                font-size: 3vmin;
+                                margin-top: 3vmin;
+                            }
+                        }
+                    }
+                }
+
+                .btn {
+                    position: absolute;
+                    bottom: 5%;
+
+                    button {
+                        background: none;
+                        border: 0;
+                        transition: all 0.2s ease-in-out;
+
+                        &:hover {
+                            opacity: 0.5;
+                        }
+
+                        img {
+                            width: 100%;
+                            animation: updown 1s infinite;
+                        }
+                    }
+                }
+                @for $i from 2 through 4 {
+                    &:nth-child(#{$i}) {
+                        .about-title {
+                            position: relative;
+                            flex-direction: column;
+                            height: 100%;
+
+                            h2 {
+                                position: absolute;
+                                top: 7vmin;
+                                width: max-content;
+                                @include hn-eng();
+                                font-size: 20vmin;
+
+                                // 첫 번째 h2 요소에 대한 스타일
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    left: -20%;
+                                    bottom: -10%;
+                                    @include borderblack();
+                                    width: 120%;
+                                    height: 10%;
+                                    background-color: $white;
+                                    z-index: 3;
+                                }
+                            }
+                            img {
+                                position: absolute;
+                                left: 50%;
+                                width: 70%;
+                                bottom: 10%;
+                                transform: translateX(-50%);
+                            }
+                        }
+
+                        .yellow-box {
+                            width: 100%;
+                            min-height: 90%;
+                            margin-top: 10vmin;
+                            background-color: $skill-bg;
+                            border-radius: 10px;
+                            box-shadow: 10px 10px 5px #101010a3;
+                            padding: 0 4% 1% 10%;
+                            @include borderblack();
+
+                            .content-box {
+                                position: relative;
+                                margin-top: 5%;
+                                margin-left: 5%;
+                                padding: 0;
+                                background: none;
+                                border: 0;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: stretch;
+                                z-index: 3;
+                                h3 {
+                                    width: fit-content;
                                     color: #fff;
                                     font-size: 5vmin;
-                                    margin-bottom: 2vmin;
+                                    margin-bottom: 5%;
+                                    padding: 1%;
+                                    @include borderblack();
                                     background-color: #666;
-                                    padding: 2vmin;
-                                    @include borderblack();
                                 }
-                                p{  
-                                    padding: 3vmin;
-                                    color: black;
-                                    font: {
-                                        size: 2.6vmin;
-                                        weight: 300;
-                                    } 
-                                    margin-top: 3vmin;
-                                    background-color: #fff;
+
+                                p {
+                                    padding: 5%;
+                                    background-color: $white;
                                     @include borderblack();
+                                    font-size: 2.5vmin;
+                                }
+                            }
+                        }
+                        .btn {
+                            position: absolute;
+                            bottom: -10%;
+                            button {
+                                background: none;
+                                border: 0;
+                                transition: all 0.2s ease-in-out;
+        
+                                &:hover {
+                                    opacity: 0.5;
+                                }
+        
+                                img {
+                                    width: 100%;
+                                    animation: updown 1s infinite;
                                 }
                             }
                         }
@@ -372,27 +504,33 @@ section.about-me{
     }
 }
 
+/* Skills Styles */
 .skills {
     background: url(../image/skill-bg.png) no-repeat center bottom;
     background-size: cover;
-    .flex-box{
+
+    .flex-box {
         @include flex();
+
         h2 {
             @include hn-eng();
             font-size: 22vmin;
         }
-        button{
+
+        button {
             background: none;
             border: 0;
         }
     }
+
     hr {
         @include borderblack();
         padding: 0.5%;
         background-color: $white;
         margin: 1% 0 3% 0;
     }
-    .skills-info{
+
+    .skills-info {
         width: 100%;
         background-color: #fff;
         display: flex;
@@ -402,12 +540,14 @@ section.about-me{
         padding: 8% 3%;
         border-radius: 15px;
         box-shadow: 15px 15px #00000086;
-        button{
+
+        button {
             background: none;
             border: 0;
             cursor: pointer;
         }
-        .slide-box{
+
+        .slide-box {
             width: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -415,9 +555,11 @@ section.about-me{
             overflow: hidden;
             grid-column-gap: 5%;
             align-items: center;
-            li{
+
+            li {
                 margin: 0 auto;
-                img{
+
+                img {
                     height: 100%;
                 }
             }

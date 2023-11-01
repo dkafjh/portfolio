@@ -94,7 +94,7 @@ button {
   cursor: pointer;
 }
 
-/*============header===============*/
+/* Header Styles */
 header {
   width: 100%;
   max-width: 1280px;
@@ -213,7 +213,7 @@ header .flex-box .menu-box .gnb li:hover a {
   }
 }
 
-/*=========main=============*/
+/* Main Styles */
 .title {
   position: relative;
   overflow: hidden;
@@ -249,58 +249,74 @@ header .flex-box .menu-box .gnb li:hover a {
   }
 }
 
+/* About Me Styles */
 section.about-me {
   padding: 0;
 }
-section.about-me .sub-list {
+section.about-me .wrapper {
+  position: relative;
+}
+section.about-me .wrapper .sub-list {
   position: fixed;
-  width: 80%;
+  width: -moz-max-content;
+  width: max-content;
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
   z-index: 9999;
 }
-@media screen and (min-width: 1280px) {
-  section.about-me .sub-list {
-    left: 10%;
+@media all and (min-width: 768px) {
+  section.about-me .wrapper .sub-list {
+    left: 5vw;
+    transform: translate(0);
+  }
+}
+@media screen and (min-width: 1440px) {
+  section.about-me .wrapper .sub-list {
+    left: 5%;
     top: 50%;
     transform: translateY(-50%);
   }
 }
-section.about-me .sub-list ul {
+section.about-me .wrapper .sub-list ul {
   display: flex;
   justify-content: space-between;
 }
-@media screen and (min-width: 1280px) {
-  section.about-me .sub-list ul {
+@media all and (min-width: 768px) {
+  section.about-me .wrapper .sub-list ul {
+    justify-content: left;
+  }
+}
+@media screen and (min-width: 1440px) {
+  section.about-me .wrapper .sub-list ul {
     display: block;
   }
 }
-section.about-me .sub-list ul li {
-  list-style: disc;
+section.about-me .wrapper .sub-list ul li {
   color: #fff;
   list-style-position: inside;
-  margin-left: 10px;
+  list-style: disc;
+  margin-left: 20px;
 }
-@media screen and (min-width: 1280px) {
-  section.about-me .sub-list ul li {
+@media screen and (min-width: 1440px) {
+  section.about-me .wrapper .sub-list ul li {
     margin-left: 0;
     margin-top: 20px;
   }
 }
-section.about-me .sub-list ul li:hover a {
-  letter-spacing: 2px;
-}
-section.about-me .sub-list ul li a {
+section.about-me .wrapper .sub-list ul li a {
   font-size: 6vmin;
   font-family: "SDSwagger";
   color: #fff;
   transition: all 0.5s ease-in-out;
 }
 @media all and (min-width: 768px) {
-  section.about-me .sub-list ul li a {
-    font-size: 2em;
+  section.about-me .wrapper .sub-list ul li a {
+    font-size: 3em;
   }
+}
+section.about-me .wrapper .sub-list ul li a:hover {
+  letter-spacing: 2px;
 }
 section.about-me .slide-box .flex-box {
   width: 400%;
@@ -308,232 +324,380 @@ section.about-me .slide-box .flex-box {
   justify-content: space-between;
 }
 section.about-me .slide-box .flex-box .info {
-  position: relative;
+  padding-top: 156px;
   width: 100%;
   height: 100vh;
   background: url(../image/about-bg.png) no-repeat bottom right;
   background-size: cover;
 }
-section.about-me .slide-box .flex-box .info .about-title {
-  margin-top: 30vh;
+section.about-me .slide-box .flex-box .info .grid-box {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-column-gap: 40px;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .about-title {
-    margin-top: 0;
-    position: absolute;
-    left: 10%;
-    top: 0;
-  }
-}
-section.about-me .slide-box .flex-box .info .about-title h2 {
+section.about-me .slide-box .flex-box .info .grid-box .about-title {
   position: relative;
+}
+section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+  position: absolute;
+  top: 11vmin;
+  width: -moz-max-content;
+  width: max-content;
   color: #fff;
-  font-family: "TmonMonsori";
-  -webkit-text-stroke: 5px #000;
-  font-size: 12vw;
-  text-align: center;
+  font-family: "SDSwagger";
+  -webkit-text-stroke: 1px #000;
+  font-size: 20vmin;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .about-title h2 {
-    text-align: left;
-    font-size: 13vmin;
-  }
-}
-section.about-me .slide-box .flex-box .info .about-title h2:after {
+section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 10px;
-  background-color: #ffffff;
-  border: 5px solid #000;
   left: 0;
-  bottom: -10px;
-  z-index: 0;
+  bottom: -100%;
+  border: 5px solid #000;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 3;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .about-title h2:after {
-    height: 100%;
-    bottom: -100%;
-  }
-}
-section.about-me .slide-box .flex-box .info .about-title .img-box {
-  display: none;
-}
-section.about-me .slide-box .flex-box .info .yellow-box {
-  margin-top: 4%;
-  padding: 3%;
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
+  width: 100%;
+  height: 90%;
+  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
+  padding: 10% 3% 1% 10%;
   border: 5px solid #000;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .yellow-box {
-    margin-top: 30vmin;
-    width: 65%;
-    padding-top: 20vmin;
-    margin-left: 30vmin;
-  }
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
+  width: 8%;
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  transform: translate(-20%);
 }
-@media screen and (min-width: 1300px) {
-  section.about-me .slide-box .flex-box .info .yellow-box {
-    position: absolute;
-    width: 65%;
-    right: 0;
-    margin-top: 20vmin;
-  }
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
+  width: 100%;
+  background: none;
+  border: 0;
+  position: relative;
 }
-section.about-me .slide-box .flex-box .info .yellow-box .content-box {
-  padding: 5%;
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button:hover img:last-child {
+  transform: translate(50%, 10%);
+}
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img {
+  width: 100%;
+  position: absolute;
+}
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img:first-child {
+  left: 0;
+  top: 0;
+  transform: translateY(-20%);
+}
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button img:last-child {
+  width: 80%;
+  top: 0;
+  left: 0;
+  transform: translate(-25%, 10%);
+  transition: all 0.5s ease-in-out;
+}
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
+  margin-top: 15%;
+  position: relative;
+  z-index: 3;
+  padding: 3%;
   background-color: #666;
   border: 5px solid #000;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .yellow-box .content-box {
-    position: relative;
-    z-index: 1;
-  }
-}
-section.about-me .slide-box .flex-box .info .yellow-box .content-box h3 {
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
   color: #fff;
   font-size: 5vmin;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .yellow-box .content-box h3 {
-    font-size: 4vmin;
-  }
-}
-section.about-me .slide-box .flex-box .info .yellow-box .content-box li {
+section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
   color: #fff;
-  font-size: 4vmin;
+  font-size: 3vmin;
   margin-top: 3vmin;
-}
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .yellow-box .content-box li {
-    font-size: 3vmin;
-  }
 }
 section.about-me .slide-box .flex-box .info .btn {
-  margin-top: 7%;
-  position: relative;
-}
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .btn {
-    margin-top: -20%;
-  }
+  position: absolute;
+  bottom: 5%;
 }
 section.about-me .slide-box .flex-box .info .btn button {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
   background: none;
   border: 0;
+  transition: all 0.2s ease-in-out;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .btn button {
-    left: 10%;
-    transform: translate(0);
-  }
+section.about-me .slide-box .flex-box .info .btn button:hover {
+  opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info .btn button img {
-  width: 60%;
+  width: 100%;
   animation: updown 1s infinite;
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info .btn button img {
-    width: 100%;
-  }
+section.about-me .slide-box .flex-box .info:nth-child(2) .about-title {
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .about-title h2 {
+  position: absolute;
+  top: 7vmin;
+  width: -moz-max-content;
+  width: max-content;
+  color: #fff;
+  font-family: "SDSwagger";
+  -webkit-text-stroke: 1px #000;
+  font-size: 20vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .about-title h2::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  bottom: -10%;
+  border: 5px solid #000;
+  width: 120%;
+  height: 10%;
+  background-color: #fff;
+  z-index: 3;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .about-title img {
+  position: absolute;
+  left: 50%;
+  width: 70%;
+  bottom: 10%;
+  transform: translateX(-50%);
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box {
-  margin-top: 3vmin;
-  padding: 2vmin;
+  width: 100%;
+  min-height: 90%;
+  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
+  padding: 0 4% 1% 10%;
   border: 5px solid #000;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box {
-  padding: 5%;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  padding: 0;
   background: none;
   border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box h3 {
+  width: -moz-fit-content;
+  width: fit-content;
   color: #fff;
   font-size: 5vmin;
-  margin-bottom: 2vmin;
-  background-color: #666;
-  padding: 2vmin;
+  margin-bottom: 5%;
+  padding: 1%;
   border: 5px solid #000;
+  background-color: #666;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box p {
-  padding: 3vmin;
-  color: black;
-  font-size: 2.6vmin;
-  font-weight: 300;
-  margin-top: 3vmin;
+  padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
+  font-size: 2.5vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .btn {
+  position: absolute;
+  bottom: -10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .btn button {
+  background: none;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .btn button:hover {
+  opacity: 0.5;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .btn button img {
+  width: 100%;
+  animation: updown 1s infinite;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .about-title {
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .about-title h2 {
+  position: absolute;
+  top: 7vmin;
+  width: -moz-max-content;
+  width: max-content;
+  color: #fff;
+  font-family: "SDSwagger";
+  -webkit-text-stroke: 1px #000;
+  font-size: 20vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .about-title h2::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  bottom: -10%;
+  border: 5px solid #000;
+  width: 120%;
+  height: 10%;
+  background-color: #fff;
+  z-index: 3;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .about-title img {
+  position: absolute;
+  left: 50%;
+  width: 70%;
+  bottom: 10%;
+  transform: translateX(-50%);
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box {
-  margin-top: 3vmin;
-  padding: 2vmin;
+  width: 100%;
+  min-height: 90%;
+  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
+  padding: 0 4% 1% 10%;
   border: 5px solid #000;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box {
-  padding: 5%;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  padding: 0;
   background: none;
   border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box h3 {
+  width: -moz-fit-content;
+  width: fit-content;
   color: #fff;
   font-size: 5vmin;
-  margin-bottom: 2vmin;
-  background-color: #666;
-  padding: 2vmin;
+  margin-bottom: 5%;
+  padding: 1%;
   border: 5px solid #000;
+  background-color: #666;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box p {
-  padding: 3vmin;
-  color: black;
-  font-size: 2.6vmin;
-  font-weight: 300;
-  margin-top: 3vmin;
+  padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
+  font-size: 2.5vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .btn {
+  position: absolute;
+  bottom: -10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .btn button {
+  background: none;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .btn button:hover {
+  opacity: 0.5;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .btn button img {
+  width: 100%;
+  animation: updown 1s infinite;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .about-title {
+  position: relative;
+  flex-direction: column;
+  height: 100%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .about-title h2 {
+  position: absolute;
+  top: 7vmin;
+  width: -moz-max-content;
+  width: max-content;
+  color: #fff;
+  font-family: "SDSwagger";
+  -webkit-text-stroke: 1px #000;
+  font-size: 20vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .about-title h2::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  bottom: -10%;
+  border: 5px solid #000;
+  width: 120%;
+  height: 10%;
+  background-color: #fff;
+  z-index: 3;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .about-title img {
+  position: absolute;
+  left: 50%;
+  width: 70%;
+  bottom: 10%;
+  transform: translateX(-50%);
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box {
-  margin-top: 3vmin;
-  padding: 2vmin;
+  width: 100%;
+  min-height: 90%;
+  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
+  box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
+  padding: 0 4% 1% 10%;
   border: 5px solid #000;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box {
-  padding: 5%;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  padding: 0;
   background: none;
   border: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 3;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box h3 {
+  width: -moz-fit-content;
+  width: fit-content;
   color: #fff;
   font-size: 5vmin;
-  margin-bottom: 2vmin;
-  background-color: #666;
-  padding: 2vmin;
+  margin-bottom: 5%;
+  padding: 1%;
   border: 5px solid #000;
+  background-color: #666;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box p {
-  padding: 3vmin;
-  color: black;
-  font-size: 2.6vmin;
-  font-weight: 300;
-  margin-top: 3vmin;
+  padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
+  font-size: 2.5vmin;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .btn {
+  position: absolute;
+  bottom: -10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .btn button {
+  background: none;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .btn button:hover {
+  opacity: 0.5;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .btn button img {
+  width: 100%;
+  animation: updown 1s infinite;
 }
 
+/* Skills Styles */
 .skills {
   background: url(../image/skill-bg.png) no-repeat center bottom;
   background-size: cover;
