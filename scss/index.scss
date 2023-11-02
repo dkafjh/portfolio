@@ -74,6 +74,7 @@ header {
             background-color: rgb(56, 127, 189);
             padding: 5% 0;
             position: absolute;
+            z-index: 9999999;
             top: 0;
             right: 0;
             width: 70%;
@@ -223,11 +224,14 @@ section.about-me {
             display: grid;
             grid-template-columns: repeat(4, 1fr); 
             grid-column-gap: 10%;
-            z-index: 99;
+            z-index: 9999;
             background-color: $white;
             padding: 3% 2%;
             border-radius: 10px;
             border: 5px solid $black;
+            @include responsive(medium-screens) {
+                padding: 2%;
+            }
             @include responsive(large-screens){
                 width: max-content;
                 display: block;
@@ -260,6 +264,9 @@ section.about-me {
                         family: $hn-eng
                     }
                     color: $black;
+                    @include responsive(medium-screens) {
+                        font-size: 2em;
+                    }
                     &::after{
                         content: '';
                         width: 5px;
@@ -292,28 +299,46 @@ section.about-me {
                 padding-top: $header-px;
                 width: (400% / 4);
                 height: 100vh;
-                background: url(../image/about-bg.png) no-repeat bottom right;
-                background-size: cover;
+                background: url(../image/about-bg.png) no-repeat bottom center;
+                background-size:cover;
 
                 .grid-box {
-                    display: grid;
-                    grid-template-columns: 3fr 9fr;
-                    grid-column-gap: 40px;
+                    // display: grid;
+                    // grid-template-columns: 3fr 9fr;
+                    // grid-column-gap: 40px;
+                    margin-top: 25%;
+                    display: flex;
+                    flex-direction: column;
+                    @include responsive(small-screens) {
+                        margin-top: 10%;
+                        display: grid;
+                        grid-template-columns: 3fr 9fr;
+                        grid-column-gap: 40px;
+                    }
 
                     .about-title {
                         position: relative;
+                        margin: 0 auto;
+                        @include responsive(small-screens) {
+                            width: 200%;
+                        }
 
                         h2 {
-                            position: absolute;
-                            top: 11vmin;
+                            // position: absolute;
+                            // top: 11vmin;
                             width: max-content;
                             @include hn-eng();
-                            font-size: 20vmin;
-                            @include responsive(medium-screens) {
-                                font-size: 8em;
+                            font-size: 6em;
+                            @include responsive(small-screens) {
+                                position: absolute;
+                                font-size: 13rem;
+                                left: 0;
                             }
-                            @include responsive(large-screens) {
-                                font-size: 12em;
+                            @include responsive(medium-screens) {
+                                position: absolute;
+                                font-size: 8em;
+                                left: 0;
+                                font-size: 14em;
                             }
 
                             // 첫 번째 h2 요소에 대한 스타일
@@ -321,10 +346,12 @@ section.about-me {
                                 content: '';
                                 position: absolute;
                                 left: 0;
-                                bottom: -100%;
+                                // bottom: -100%;
+                                bottom: -10%;
                                 @include borderblack();
                                 width: 100%;
-                                height: 100%;
+                                // height: 100%;
+                                height: 10%;
                                 background-color: $white;
                                 z-index: 3;
                             }
@@ -338,10 +365,17 @@ section.about-me {
                         background-color: $skill-bg;
                         border-radius: 10px;
                         box-shadow: 10px 10px 5px #101010a3;
-                        padding: 10% 3% 1% 10%;
+                        // padding: 10% 3% 1% 10%;
+                        padding: 5%;
                         @include borderblack();
+                        @include responsive(small-screens) {
+                            margin-top: 4vmin;
+                            padding: 10% 3% 5% 10%;
+                        }
+                        
 
                         .btn-area {
+                            display: none;
                             width: 8%;
                             position: absolute;
                             right: 5%;
@@ -378,23 +412,31 @@ section.about-me {
                         }
 
                         .content-box {
-                            margin-top: 15%;
+                            // margin-top: 15%;
                             position: relative;
                             z-index: 3;
                             padding: 3%;
                             background-color: #666;
                             @include borderblack();
+                            @include responsive(small-screens) {
+                                margin-top: 15%;
+                            }
 
                             h3 {
                                 color: #fff;
-                                font-size: 5vmin;
+                                // font-size: 5vmin;
+                                font-size: 1.5em;
                                 margin-bottom: 5%;
                             }
 
                             li {
                                 color: #fff;
-                                font-size: 3vmin;
+                                // font-size: 3vmin;
+                                font-size: 1em;
                                 margin-top: 3vmin;
+                                @include responsive(small-screens) {
+                                    margin-top: 15%;
+                                }
                             }
                         }
                     }
@@ -402,7 +444,10 @@ section.about-me {
 
                 .btn {
                     position: absolute;
-                    bottom: 5%;
+                    // bottom: 5%;
+                    bottom: -30%;
+                    left: 50%;
+                    transform: translateX(-50%);
 
                     button {
                         background: none;
@@ -414,89 +459,110 @@ section.about-me {
                         }
 
                         img {
-                            width: 100%;
+                            // width: 100%;
+                            width: 70%;
                             animation: updown 1s infinite;
                         }
                     }
                 }
                 @for $i from 2 through 4 {
                     &:nth-child(#{$i}) {
-                        .about-title {
-                            position: relative;
-                            flex-direction: column;
-                            height: 100%;
-
-                            h2 {
-                                position: absolute;
-                                top: 7vmin;
-                                width: max-content;
-                                @include hn-eng();
-                                font-size: 20vmin;
-
-                                // 첫 번째 h2 요소에 대한 스타일
-                                &::after {
-                                    content: '';
-                                    position: absolute;
-                                    left: -20%;
-                                    bottom: -10%;
-                                    @include borderblack();
-                                    width: 120%;
-                                    height: 10%;
-                                    background-color: $white;
-                                    z-index: 3;
-                                }
-                            }
-                            img {
-                                position: absolute;
-                                left: 50%;
-                                width: 70%;
-                                bottom: 10%;
-                                transform: translateX(-50%);
-                            }
-                        }
-
-                        .yellow-box {
-                            width: 100%;
-                            min-height: 90%;
-                            margin-top: 10vmin;
-                            background-color: $skill-bg;
-                            border-radius: 10px;
-                            box-shadow: 10px 10px 5px #101010a3;
-                            padding: 0 4% 1% 10%;
-                            @include borderblack();
-
-                            .content-box {
-                                position: relative;
-                                margin-top: 5%;
-                                margin-left: 5%;
-                                padding: 0;
-                                background: none;
-                                border: 0;
+                        .grid-box{
+                            // margin-top: 12%;
+                            margin-top: 20%;
+                            .about-title {
                                 display: flex;
-                                flex-direction: column;
-                                align-items: stretch;
-                                z-index: 3;
-                                h3 {
-                                    width: fit-content;
-                                    color: #fff;
-                                    font-size: 5vmin;
-                                    margin-bottom: 5%;
-                                    padding: 1%;
-                                    @include borderblack();
-                                    background-color: #666;
+                                position: relative;
+                                // flex-direction: column;
+                                // height: 100%;
+                                align-items: center;
+    
+                                h2 {
+                                    // position: absolute;
+                                    // top: 7vmin;
+                                    width: max-content;
+                                    @include hn-eng();
+                                    // font-size: 20vmin;
+                                    font-size: 3rem;
+    
+                                    // 첫 번째 h2 요소에 대한 스타일
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        // left: -20%;
+                                        // bottom: -10%;
+                                        @include borderblack();
+                                        // width: 120%;
+                                        width: 100%;
+                                        height: 10%;
+                                        background-color: $white;
+                                        z-index: 3;
+                                    }
                                 }
-
-                                p {
-                                    padding: 5%;
-                                    background-color: $white;
-                                    @include borderblack();
-                                    font-size: 2.5vmin;
+                                .img-box{
+                                    display: flex;
+                                    flex: 1;
+                                    img {
+                                        // position: absolute;
+                                        // left: 50%;
+                                        // width: 60%;
+                                            width: 40%;
+                                            margin-left: 10%;
+                                        // bottom: 10%;
+                                        // transform: translateX(-50%);
+                                    }
+                                }
+                            }
+    
+                            .yellow-box {
+                                width: 100%;
+                                min-height: 90%;
+                                // margin-top: 10vmin;
+                                background-color: $skill-bg;
+                                border-radius: 10px;
+                                box-shadow: 10px 10px 5px #101010a3;
+                                // padding: 0 4% 1% 10%;
+                                padding: 5%;
+                                @include borderblack();
+    
+                                .content-box {
+                                    position: relative;
+                                    // margin-top: 5%;
+                                    // margin-left: 5%;
+                                    padding: 0;
+                                    background: none;
+                                    border: 0;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: stretch;
+                                    z-index: 3;
+                                    h3 {
+                                        width: fit-content;
+                                        color: #fff;
+                                        // font-size: 5vmin;
+                                        font-size: 1.5rem;
+                                        margin-bottom: 5%;
+                                        padding: 1%;
+                                        @include borderblack();
+                                        background-color: #666;
+                                    }
+    
+                                    p {
+                                        padding: 5%;
+                                        background-color: $white;
+                                        @include borderblack();
+                                        // font-size: 2.5vmin;
+                                        font-size: 1rem;
+                                        max-height: 200px;
+                                        overflow-y: auto;
+                                    }
                                 }
                             }
                         }
                         .btn {
                             position: absolute;
-                            bottom: -10%;
+                            // bottom: -10%;
+                            bottom: -20%;
                             button {
                                 background: none;
                                 border: 0;
@@ -507,6 +573,7 @@ section.about-me {
                                 }
         
                                 img {
+                                    // width: 100%;
                                     width: 100%;
                                     animation: updown 1s infinite;
                                 }

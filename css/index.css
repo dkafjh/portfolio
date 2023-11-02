@@ -137,6 +137,7 @@ header .flex-box .menu-box {
   background-color: rgb(56, 127, 189);
   padding: 5% 0;
   position: absolute;
+  z-index: 9999999;
   top: 0;
   right: 0;
   width: 70%;
@@ -279,14 +280,20 @@ section.about-me .wrapper .sub-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10%;
-  z-index: 99;
+  z-index: 9999;
   background-color: #fff;
   padding: 3% 2%;
   border-radius: 10px;
   border: 5px solid #000;
 }
+@media all and (min-width: 1024px) {
+  section.about-me .wrapper .sub-list {
+    padding: 2%;
+  }
+}
 @media all and (min-width: 1600px) {
   section.about-me .wrapper .sub-list {
+    width: -moz-max-content;
     width: max-content;
     display: block;
     border: 0;
@@ -318,6 +325,11 @@ section.about-me .wrapper .sub-list li a {
   font-family: "SDSwagger";
   color: #000;
 }
+@media all and (min-width: 1024px) {
+  section.about-me .wrapper .sub-list li a {
+    font-size: 2em;
+  }
+}
 section.about-me .wrapper .sub-list li a::after {
   content: "";
   width: 5px;
@@ -348,44 +360,62 @@ section.about-me .slide-box .flex-box .info {
   padding-top: 156px;
   width: 100%;
   height: 100vh;
-  background: url(../image/about-bg.png) no-repeat bottom right;
+  background: url(../image/about-bg.png) no-repeat bottom center;
   background-size: cover;
 }
 section.about-me .slide-box .flex-box .info .grid-box {
-  display: grid;
-  grid-template-columns: 3fr 9fr;
-  grid-column-gap: 40px;
+  margin-top: 25%;
+  display: flex;
+  flex-direction: column;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-column-gap: 40px;
+  }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title {
   position: relative;
+  margin: 0 auto;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .about-title {
+    width: 200%;
+  }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
-  position: absolute;
-  top: 11vmin;
+  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 1px #000;
-  font-size: 20vmin;
+  font-size: 6em;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    position: absolute;
+    font-size: 13rem;
+    left: 0;
+  }
 }
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    position: absolute;
     font-size: 8em;
-  }
-}
-@media all and (min-width: 1600px) {
-  section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
-    font-size: 12em;
+    left: 0;
+    font-size: 14em;
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -100%;
+  bottom: -10%;
   border: 5px solid #000;
   width: 100%;
-  height: 100%;
+  height: 10%;
   background-color: #fff;
   z-index: 3;
 }
@@ -396,10 +426,17 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
-  padding: 10% 3% 1% 10%;
+  padding: 5%;
   border: 5px solid #000;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
+    margin-top: 4vmin;
+    padding: 10% 3% 5% 10%;
+  }
+}
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
+  display: none;
   width: 8%;
   position: absolute;
   right: 5%;
@@ -409,6 +446,7 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
   width: 100%;
+  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -432,26 +470,37 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area butt
   transition: all 0.5s ease-in-out;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
-  margin-top: 15%;
   position: relative;
   z-index: 3;
   padding: 3%;
   background-color: #666;
   border: 5px solid #000;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
+    margin-top: 15%;
+  }
+}
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
   color: #fff;
-  font-size: 5vmin;
+  font-size: 1.5em;
   margin-bottom: 5%;
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
   color: #fff;
-  font-size: 3vmin;
+  font-size: 1em;
   margin-top: 3vmin;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
+    margin-top: 15%;
+  }
 }
 section.about-me .slide-box .flex-box .info .btn {
   position: absolute;
-  bottom: 5%;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 section.about-me .slide-box .flex-box .info .btn button {
   background: none;
@@ -462,55 +511,53 @@ section.about-me .slide-box .flex-box .info .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info .btn button img {
-  width: 100%;
+  width: 70%;
   animation: updown 1s infinite;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .about-title {
-  position: relative;
-  flex-direction: column;
-  height: 100%;
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
+  margin-top: 20%;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .about-title h2 {
-  position: absolute;
-  top: 7vmin;
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
+  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 1px #000;
-  font-size: 20vmin;
+  font-size: 3rem;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .about-title h2::after {
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2::after {
   content: "";
   position: absolute;
-  left: -20%;
-  bottom: -10%;
   border: 5px solid #000;
-  width: 120%;
+  width: 100%;
   height: 10%;
   background-color: #fff;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .about-title img {
-  position: absolute;
-  left: 50%;
-  width: 70%;
-  bottom: 10%;
-  transform: translateX(-50%);
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box {
+  display: flex;
+  flex: 1;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box {
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box img {
+  width: 40%;
+  margin-left: 10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box {
   width: 100%;
   min-height: 90%;
-  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
-  padding: 0 4% 1% 10%;
+  padding: 5%;
   border: 5px solid #000;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box {
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box {
   position: relative;
-  margin-top: 5%;
-  margin-left: 5%;
   padding: 0;
   background: none;
   border: 0;
@@ -519,24 +566,27 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-bo
   align-items: stretch;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box h3 {
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
+  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
-  font-size: 5vmin;
+  font-size: 1.5rem;
   margin-bottom: 5%;
   padding: 1%;
   border: 5px solid #000;
   background-color: #666;
 }
-section.about-me .slide-box .flex-box .info:nth-child(2) .yellow-box .content-box p {
+section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
-  font-size: 2.5vmin;
+  font-size: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn {
   position: absolute;
-  bottom: -10%;
+  bottom: -20%;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn button {
   background: none;
@@ -550,52 +600,50 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .btn button img {
   width: 100%;
   animation: updown 1s infinite;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .about-title {
-  position: relative;
-  flex-direction: column;
-  height: 100%;
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
+  margin-top: 20%;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .about-title h2 {
-  position: absolute;
-  top: 7vmin;
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
+  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 1px #000;
-  font-size: 20vmin;
+  font-size: 3rem;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .about-title h2::after {
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2::after {
   content: "";
   position: absolute;
-  left: -20%;
-  bottom: -10%;
   border: 5px solid #000;
-  width: 120%;
+  width: 100%;
   height: 10%;
   background-color: #fff;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .about-title img {
-  position: absolute;
-  left: 50%;
-  width: 70%;
-  bottom: 10%;
-  transform: translateX(-50%);
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box {
+  display: flex;
+  flex: 1;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box {
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box img {
+  width: 40%;
+  margin-left: 10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box {
   width: 100%;
   min-height: 90%;
-  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
-  padding: 0 4% 1% 10%;
+  padding: 5%;
   border: 5px solid #000;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box {
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box {
   position: relative;
-  margin-top: 5%;
-  margin-left: 5%;
   padding: 0;
   background: none;
   border: 0;
@@ -604,24 +652,27 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-bo
   align-items: stretch;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box h3 {
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
+  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
-  font-size: 5vmin;
+  font-size: 1.5rem;
   margin-bottom: 5%;
   padding: 1%;
   border: 5px solid #000;
   background-color: #666;
 }
-section.about-me .slide-box .flex-box .info:nth-child(3) .yellow-box .content-box p {
+section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
-  font-size: 2.5vmin;
+  font-size: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn {
   position: absolute;
-  bottom: -10%;
+  bottom: -20%;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn button {
   background: none;
@@ -635,52 +686,50 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .btn button img {
   width: 100%;
   animation: updown 1s infinite;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .about-title {
-  position: relative;
-  flex-direction: column;
-  height: 100%;
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
+  margin-top: 20%;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .about-title h2 {
-  position: absolute;
-  top: 7vmin;
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
+  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 1px #000;
-  font-size: 20vmin;
+  font-size: 3rem;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .about-title h2::after {
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2::after {
   content: "";
   position: absolute;
-  left: -20%;
-  bottom: -10%;
   border: 5px solid #000;
-  width: 120%;
+  width: 100%;
   height: 10%;
   background-color: #fff;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .about-title img {
-  position: absolute;
-  left: 50%;
-  width: 70%;
-  bottom: 10%;
-  transform: translateX(-50%);
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box {
+  display: flex;
+  flex: 1;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box {
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box img {
+  width: 40%;
+  margin-left: 10%;
+}
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box {
   width: 100%;
   min-height: 90%;
-  margin-top: 10vmin;
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
-  padding: 0 4% 1% 10%;
+  padding: 5%;
   border: 5px solid #000;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box {
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box {
   position: relative;
-  margin-top: 5%;
-  margin-left: 5%;
   padding: 0;
   background: none;
   border: 0;
@@ -689,24 +738,27 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-bo
   align-items: stretch;
   z-index: 3;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box h3 {
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
+  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
-  font-size: 5vmin;
+  font-size: 1.5rem;
   margin-bottom: 5%;
   padding: 1%;
   border: 5px solid #000;
   background-color: #666;
 }
-section.about-me .slide-box .flex-box .info:nth-child(4) .yellow-box .content-box p {
+section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
   border: 5px solid #000;
-  font-size: 2.5vmin;
+  font-size: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn {
   position: absolute;
-  bottom: -10%;
+  bottom: -20%;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn button {
   background: none;
