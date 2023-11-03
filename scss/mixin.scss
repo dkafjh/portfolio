@@ -21,7 +21,7 @@
 @mixin hn-eng() {
     color: $white;
     font-family: $hn-eng;
-    -webkit-text-stroke: 1px $black;
+    -webkit-text-stroke: 5px $black;
 }
 
 @mixin hn-ko() {
@@ -59,20 +59,26 @@
 // 반응형
 
 @mixin responsive($break) {
-    @if $break == small-screens {
-        @media all and (min-width:$break-small) {
+    @if $break == tablet {
+        @media all and (min-width:$break-tablet) {
             @content;
         }
     }
 
-    @else if $break == medium-screens {
-        @media all and (min-width:$break-medium) {
+    @else if $break == notebook {
+        @media all and (min-width:$break-notebook) {
             @content;
         }
     }
 
-    @else if $break == large-screens {
-        @media all and (min-width:$break-large) {
+    @else if $break == desktop {
+        @media all and (min-width:$break-desktop) {
+            @content;
+        }
+    }
+
+    @else if $break == desktopLarge {
+        @media all and (min-width:$break-desktop-large) {
             @content;
         }
     }

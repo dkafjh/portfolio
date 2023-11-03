@@ -9,6 +9,7 @@ body {
   font-family: yoon-a-yoonche, sans-serif;
   font-weight: 200;
   font-style: normal;
+  font-size: 16px;
 }
 
 ul,
@@ -81,7 +82,7 @@ aside {
   }
 }
 .wrapper {
-  width: 100%;
+  width: auto;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
@@ -92,6 +93,8 @@ section {
   padding-top: 156px;
   width: 100%;
   height: 100vh;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 
 button {
@@ -250,17 +253,17 @@ header .flex-box .menu-box .gnb li:hover a {
   line-height: 1.5em;
   color: #fff;
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 768px) {
   .title h2 {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 }
 @media all and (min-width: 1024px) {
   .title h2 {
-    font-size: 8vw;
+    font-size: 2vw;
   }
 }
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1440px) {
   .title h2 {
     font-size: 6vw;
   }
@@ -291,14 +294,14 @@ section.about-me .wrapper .sub-list {
     padding: 2%;
   }
 }
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1440px) {
   section.about-me .wrapper .sub-list {
     width: -moz-max-content;
     width: max-content;
     display: block;
     border: 0;
     background: none;
-    left: 2%;
+    left: 3%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -311,7 +314,7 @@ section.about-me .wrapper .sub-list li {
 section.about-me .wrapper .sub-list li:hover a::after {
   height: 100%;
 }
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1440px) {
   section.about-me .wrapper .sub-list li {
     list-style-position: inside;
     list-style: disc;
@@ -321,13 +324,13 @@ section.about-me .wrapper .sub-list li:hover a::after {
 }
 section.about-me .wrapper .sub-list li a {
   position: relative;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-family: "SDSwagger";
   color: #000;
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 768px) {
   section.about-me .wrapper .sub-list li a {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 section.about-me .wrapper .sub-list li a::after {
@@ -339,14 +342,14 @@ section.about-me .wrapper .sub-list li a::after {
   margin-left: 10px;
   transition: all 0.5s ease-in-out;
 }
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1440px) {
   section.about-me .wrapper .sub-list li a::after {
     background-color: #fff;
     width: 10px;
     bottom: 0;
   }
 }
-@media all and (min-width: 1600px) {
+@media all and (min-width: 1440px) {
   section.about-me .wrapper .sub-list li a {
     color: #fff;
   }
@@ -359,18 +362,28 @@ section.about-me .slide-box .flex-box {
 section.about-me .slide-box .flex-box .info {
   padding-top: 156px;
   width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
   height: 100vh;
   background: url(../image/about-bg.png) no-repeat bottom center;
   background-size: cover;
 }
 section.about-me .slide-box .flex-box .info .grid-box {
-  margin-top: 25%;
+  margin-top: 18%;
   display: flex;
   flex-direction: column;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box {
-    margin-top: 10%;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-column-gap: 40px;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box {
+    margin-top: 0;
     display: grid;
     grid-template-columns: 3fr 9fr;
     grid-column-gap: 40px;
@@ -390,22 +403,26 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
-  font-size: 6em;
+  -webkit-text-stroke: 5px #000;
+  font-size: 25vw;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    -webkit-text-stroke-width: 1px;
+    top: 11%;
     position: absolute;
-    font-size: 13rem;
+    font-size: 10em;
     left: 0;
   }
 }
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
+    top: 32%;
+    transform: translateY(-50%);
     position: absolute;
-    font-size: 8em;
+    font-size: 6em;
     left: 0;
-    font-size: 14em;
+    font-size: 10em;
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
@@ -419,10 +436,16 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
   background-color: #fff;
   z-index: 3;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .about-title h2::after {
+    bottom: -100%;
+    height: 100%;
+  }
+}
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
   width: 100%;
   height: 90%;
-  margin-top: 10vmin;
+  margin-top: 10%;
   background-color: #fec929;
   border-radius: 10px;
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
@@ -431,8 +454,19 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
-    margin-top: 4vmin;
-    padding: 10% 3% 5% 10%;
+    margin-top: 20%;
+    padding: 15% 3% 7% 10%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
+    margin-top: 10%;
+    padding: 15% 3% 1% 10%;
+  }
+}
+@media all and (min-width: 1440px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
+    margin-top: 10%;
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
@@ -443,6 +477,11 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
   top: 20%;
   transform: translateY(-20%);
   z-index: 4;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
+    display: block;
+  }
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
   width: 100%;
@@ -478,13 +517,32 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
+    margin-top: 20%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box {
     margin-top: 15%;
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
   color: #fff;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-weight: 300;
   margin-bottom: 5%;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 1%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
+    font-size: 2.5em;
+    margin-top: 1%;
+  }
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
   color: #fff;
@@ -493,7 +551,14 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box l
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
-    margin-top: 15%;
+    font-size: 1.5em;
+    margin-top: 1%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
+    font-size: 1.8em;
+    margin-top: 1%;
   }
 }
 section.about-me .slide-box .flex-box .info .btn {
@@ -501,6 +566,15 @@ section.about-me .slide-box .flex-box .info .btn {
   bottom: -30%;
   left: 50%;
   transform: translateX(-50%);
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .btn {
+    font-size: 1.5em;
+    margin-top: 1%;
+    transform: translate(0);
+    left: 10%;
+    bottom: 20%;
+  }
 }
 section.about-me .slide-box .flex-box .info .btn button {
   background: none;
@@ -514,21 +588,45 @@ section.about-me .slide-box .flex-box .info .btn button img {
   width: 70%;
   animation: updown 1s infinite;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .btn button img {
+    width: 100%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
   margin-top: 20%;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
+    margin-top: 12%;
+    height: 100%;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title {
   display: flex;
   position: relative;
   align-items: center;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title {
+    flex-direction: column;
+    height: 100%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
   width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 5px #000;
   font-size: 3rem;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
+    position: absolute;
+    top: 0;
+    font-size: 20vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2::after {
   content: "";
@@ -543,9 +641,24 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title 
   display: flex;
   flex: 1;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box {
+    display: block;
+    flex: auto;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box img {
   width: 40%;
   margin-left: 10%;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    bottom: 10%;
+    transform: translateX(-50%);
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box {
   width: 100%;
@@ -555,6 +668,12 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box {
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
   padding: 5%;
   border: 5px solid #000;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box {
+    padding: 0 4% 1% 10%;
+    margin-top: 10vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box {
   position: relative;
@@ -566,6 +685,12 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
   align-items: stretch;
   z-index: 3;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
   width: -moz-fit-content;
   width: fit-content;
@@ -576,6 +701,16 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
   border: 5px solid #000;
   background-color: #666;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
+    font-size: 3rem;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
@@ -583,6 +718,12 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
   font-size: 1rem;
   max-height: 200px;
   overflow-y: auto;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
+    font-size: 2.5vmin;
+    max-height: none;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn {
   position: absolute;
@@ -597,24 +738,43 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn button img {
-  width: 100%;
+  width: 60%;
   animation: updown 1s infinite;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
   margin-top: 20%;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
+    margin-top: 12%;
+    height: 100%;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title {
   display: flex;
   position: relative;
   align-items: center;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title {
+    flex-direction: column;
+    height: 100%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
   width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 5px #000;
   font-size: 3rem;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
+    position: absolute;
+    top: 0;
+    font-size: 20vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2::after {
   content: "";
@@ -629,9 +789,24 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title 
   display: flex;
   flex: 1;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box {
+    display: block;
+    flex: auto;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box img {
   width: 40%;
   margin-left: 10%;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    bottom: 10%;
+    transform: translateX(-50%);
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box {
   width: 100%;
@@ -641,6 +816,12 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box {
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
   padding: 5%;
   border: 5px solid #000;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box {
+    padding: 0 4% 1% 10%;
+    margin-top: 10vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box {
   position: relative;
@@ -652,6 +833,12 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
   align-items: stretch;
   z-index: 3;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
   width: -moz-fit-content;
   width: fit-content;
@@ -662,6 +849,16 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
   border: 5px solid #000;
   background-color: #666;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
+    font-size: 3rem;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
@@ -669,6 +866,12 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
   font-size: 1rem;
   max-height: 200px;
   overflow-y: auto;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
+    font-size: 2.5vmin;
+    max-height: none;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn {
   position: absolute;
@@ -683,24 +886,43 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn button img {
-  width: 100%;
+  width: 60%;
   animation: updown 1s infinite;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
   margin-top: 20%;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
+    margin-top: 12%;
+    height: 100%;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title {
   display: flex;
   position: relative;
   align-items: center;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title {
+    flex-direction: column;
+    height: 100%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
   width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 5px #000;
   font-size: 3rem;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
+    position: absolute;
+    top: 0;
+    font-size: 20vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2::after {
   content: "";
@@ -715,9 +937,24 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title 
   display: flex;
   flex: 1;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box {
+    display: block;
+    flex: auto;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box img {
   width: 40%;
   margin-left: 10%;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    bottom: 10%;
+    transform: translateX(-50%);
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box {
   width: 100%;
@@ -727,6 +964,12 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box {
   box-shadow: 10px 10px 5px rgba(16, 16, 16, 0.6392156863);
   padding: 5%;
   border: 5px solid #000;
+}
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box {
+    padding: 0 4% 1% 10%;
+    margin-top: 10vmin;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box {
   position: relative;
@@ -738,6 +981,12 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
   align-items: stretch;
   z-index: 3;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box {
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
   width: -moz-fit-content;
   width: fit-content;
@@ -748,6 +997,16 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
   border: 5px solid #000;
   background-color: #666;
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
+    font-size: 2rem;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
+    font-size: 3rem;
+  }
+}
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
   padding: 5%;
   background-color: #fff;
@@ -755,6 +1014,12 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
   font-size: 1rem;
   max-height: 200px;
   overflow-y: auto;
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
+    font-size: 2.5vmin;
+    max-height: none;
+  }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn {
   position: absolute;
@@ -769,7 +1034,7 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn button img {
-  width: 100%;
+  width: 60%;
   animation: updown 1s infinite;
 }
 
@@ -785,7 +1050,7 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .btn button img {
 .skills .flex-box h2 {
   color: #fff;
   font-family: "SDSwagger";
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 5px #000;
   font-size: 22vmin;
 }
 .skills .flex-box button {
