@@ -129,6 +129,7 @@ header .flex-box .hambuger-btn {
   display: block;
   width: 40px;
   right: 20%;
+  cursor: pointer;
 }
 header .flex-box .hambuger-btn div {
   width: 100%;
@@ -142,13 +143,14 @@ header .flex-box .hambuger-btn div {
   }
 }
 header .flex-box .menu-box {
-  display: none;
+  transition: all 0.3s ease-in-out;
+  display: block;
   background-color: rgb(56, 127, 189);
   padding: 5% 0;
   position: absolute;
   z-index: 9999999;
   top: 0;
-  right: 0;
+  right: -70%;
   width: 70%;
   height: 100vh;
 }
@@ -276,6 +278,7 @@ section.about-me {
   width: 100%;
   padding: 0;
   position: relative;
+  overflow: hidden;
 }
 section.about-me .wrapper .sub-list {
   position: fixed;
@@ -299,7 +302,6 @@ section.about-me .wrapper .sub-list {
 }
 @media all and (min-width: 1600px) {
   section.about-me .wrapper .sub-list {
-    width: -moz-max-content;
     width: max-content;
     display: block;
     border: 0;
@@ -357,19 +359,23 @@ section.about-me .wrapper .sub-list li a::after {
     color: #fff;
   }
 }
+section.about-me .wrapper .none {
+  display: none;
+}
 section.about-me .slide-box .flex-box {
+  position: relative;
   width: 400%;
   display: flex;
   justify-content: space-between;
 }
 section.about-me .slide-box .flex-box .info {
+  position: relative;
   padding-top: 156px;
   width: 100%;
-  overflow-y: hidden;
-  overflow-x: scroll;
   height: 100vh;
   background: url(../image/about-bg.png) no-repeat bottom center;
   background-size: cover;
+  transition: all 0.5s ease-in-out;
 }
 section.about-me .slide-box .flex-box .info .grid-box {
   position: relative;
@@ -404,7 +410,6 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title {
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -496,7 +501,6 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -580,6 +584,7 @@ section.about-me .slide-box .flex-box .info .btn {
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .btn {
+    z-index: 9;
     font-size: 1.5em;
     margin-top: 1%;
     transform: translate(0);
@@ -626,7 +631,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -723,7 +727,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -763,7 +766,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -862,7 +864,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -959,7 +960,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -999,7 +999,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -1098,7 +1097,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -1195,7 +1193,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -1235,7 +1232,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -1467,6 +1463,10 @@ section.about-me .corner-img:hover {
   .skills .skills-info .slide-box li p {
     font-size: 1.2em;
   }
+}
+.skills .skills-info button {
+  background: none;
+  border: 0;
 }
 
 section.Portfoilo {

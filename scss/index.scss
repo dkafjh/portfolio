@@ -64,6 +64,7 @@ header {
             display: block;
             width: 40px;
             right: 20%;
+            cursor: pointer;
 
             div {
                 width: 100%;
@@ -78,13 +79,14 @@ header {
         }
 
         .menu-box {
-            display: none;
+            transition: all 0.3s ease-in-out;
+            display: block;
             background-color: rgb(56, 127, 189);
             padding: 5% 0;
             position: absolute;
             z-index: 9999999;
             top: 0;
-            right: 0;
+            right: -70%;
             width: 70%;
             height: 100vh;
 
@@ -216,6 +218,7 @@ section.about-me {
     width: 100%;
     padding: 0;
     position: relative;
+    overflow: hidden;
     .wrapper {
         .sub-list {
             position: fixed;
@@ -243,7 +246,9 @@ section.about-me {
                 top: 50%;
                 transform: translateY(-50%);
             }
-
+            
+            
+            
             li {
                 width: 100%;
                 color: #fff;
@@ -289,22 +294,26 @@ section.about-me {
                 }
             }
         }
+        .none{
+            display: none;
+        }
     }
 
     .slide-box {
         .flex-box {
+            position: relative;
             width: 400%;
             display: flex;
             justify-content: space-between;
 
             .info {
+                position: relative;
                 padding-top: $header-px;
                 width: (400% / 4);
-                overflow-y: hidden;
-                overflow-x: scroll;
                 height: 100vh;
                 background: url(../image/about-bg.png) no-repeat bottom center;
                 background-size:cover;
+                transition: all 0.5s ease-in-out;
 
                 .grid-box {
                     position: relative;
@@ -501,6 +510,7 @@ section.about-me {
                     left: 50%;
                     transform: translateX(-50%);
                     @include responsive(tablet) {
+                        z-index: 9;
                         font-size: 1.5em;
                         margin-top: 1%;
                         transform: translate(0);
@@ -892,6 +902,10 @@ section.about-me {
                     }
                 }
             }
+        }
+        button{
+            background: none;
+            border: 0;
         }
     }
 }

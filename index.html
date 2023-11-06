@@ -16,7 +16,8 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" defer></script>
+    <script src="./js/hamburgerbtn.js" defer></script>
     <title>조원태 자기소개 포트폴리오</title>
 </head>
 <body>
@@ -27,13 +28,13 @@
                     <div>
                         <h1 class="logo"><img src="./image/logo.png" alt="logo"></h1>
                     </div>
-                    <div class="hambuger-btn">
+                    <div class="hambuger-btn" id="open-btn">
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                     <div class="menu-box">
-                        <div class="hambuger-btn">
+                        <div class="hambuger-btn" id="close-btn">
                             <div></div>
                             <div></div>
                             <div></div>
@@ -61,16 +62,16 @@
 
         <section class="about-me">
             <div class="wrapper">
-                <ul class="sub-list">
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">긍정적</a></li>
-                    <li><a href="#">노력형</a></li>
-                    <li><a href="#">의사소통</a></li>
+                <ul class="sub-list none">
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#effort">노력형</a></li>
+                    <li><a href="#positive">긍정적</a></li>
+                    <li><a href="#commuiton">의사소통</a></li>
                 </ul>
             </div>
             <div class="slide-box">
                 <ul class="flex-box">
-                    <li class="info">
+                    <li class="info" id="profile">
                         <div class="wrapper">
                             <div class="grid-box">
                                 <div class="about-title">
@@ -98,8 +99,11 @@
                                 <button class="down-btn"><img src="./image/down button.png" alt="downbtn"></button>
                             </div>
                         </div><!--wrapper--> 
+                        <div class="corner-img">
+                            <img src="./image/about-corner.png" alt="about-corner">
+                        </div>
                     </li>
-                    <li class="info">
+                    <li class="info" id="positive">
                         <div class="wrapper">
                             <div class="grid-box">
                                 <div class="about-title">
@@ -130,7 +134,7 @@
                             </div>
                         </div> <!--wrapper-->                     
                     </li>
-                    <li class="info">
+                    <li class="info" id="effort">
                         <div class="wrapper">
                             <div class="grid-box">
                                 <div class="about-title">
@@ -161,7 +165,7 @@
                             </div>
                         </div><!--wrapper-->
                     </li>
-                    <li class="info">
+                    <li class="info" id="communiton">
                         <div class="wrapper">
                             <div class="grid-box">
                                 <div class="about-title">
@@ -171,12 +175,6 @@
                                     </div>
                                 </div><!--my-info-->
                                 <div class="yellow-box">
-                                    <div class="btn-area">
-                                        <button class="next-btn">
-                                            <img src="./image/Asset 4.svg" alt="next-btn">
-                                            <img src="./image/Asset 3.png" alt="next-btn">
-                                        </button>
-                                    </div>
                                     <div class="content-box">
                                         <h3>소통 창구 "조원태"입니다</h3>
                                         <p>
@@ -194,9 +192,6 @@
                     </li>
                 </ul>
             </div><!--slide-box-->
-            <div class="corner-img">
-                <img src="./image/about-corner.png" alt="about-corner">
-            </div>
         </section>
 
         
