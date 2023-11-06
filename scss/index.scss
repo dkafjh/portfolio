@@ -185,7 +185,7 @@ header {
         width: 90%;
 
         font: {
-            size: 10vw;
+            size: 2em;
             family: $hn-ko;
         }
 
@@ -196,18 +196,11 @@ header {
 
         line-height: 1.5em;
         color: $white;
-
         @include responsive(tablet) {
-            font-size: 5vw;
+            font-size: 4em;
         }
-
         @include responsive(notebook) {
-            font-size: 2vw;
-        }
-
-        // PC
-        @include responsive(desktop) {
-            font-size: 6vw;
+            font-size: 6em;
         }
     }
 }
@@ -234,7 +227,7 @@ section.about-me {
             @include responsive(notebook) {
                 padding: 2%;
             }
-            @include responsive(desktop){
+            @include responsive(desktopLarge){
                 width: max-content;
                 display: block;
                 border: 0;
@@ -253,7 +246,7 @@ section.about-me {
                 &:hover a::after{
                     height: 100%;
                 }
-                @include responsive(desktop) {
+                @include responsive(desktopLarge) {
                     list-style-position: inside;
                     list-style: disc;
                     font-size: 1.5em;
@@ -277,13 +270,13 @@ section.about-me {
                         background-color: #000000;
                         margin-left: 10px;
                         transition: all 0.5s ease-in-out;
-                        @include responsive(desktop) {
+                        @include responsive(desktopLarge) {
                             background-color: #fff;
                             width: 10px;
                             bottom: 0;
                         }
                     }
-                    @include responsive(desktop) {
+                    @include responsive(desktopLarge) {
                         color: #fff;
                     }
                 }
@@ -314,7 +307,7 @@ section.about-me {
                     display: flex;
                     flex-direction: column;
                     @include responsive(tablet) {
-                        margin-top: 0;
+                        margin-top: 10%;
                         display: grid;
                         grid-template-columns: 3fr 9fr;
                         grid-column-gap: 40px;
@@ -350,9 +343,8 @@ section.about-me {
                                 top: 32%;
                                 transform: translateY(-50%);
                                 position: absolute;
-                                font-size: 6em;
                                 left: 0;
-                                font-size: 10em;
+                                font-size: 12em;
                             }
 
                             // 첫 번째 h2 요소에 대한 스타일
@@ -388,7 +380,7 @@ section.about-me {
                         @include borderblack();
                         @include responsive(tablet) {
                             margin-top: 20%;
-                            padding: 15% 3% 7% 10%;
+                            padding: 15% 3% 1% 10%;
                         }
                         @include responsive(notebook) {
                             margin-top: 10%;
@@ -396,7 +388,7 @@ section.about-me {
                         }
 
                         @include responsive(desktop) {
-                            margin-top: 10%;
+                            margin-top: 15%;
                         }
                         
 
@@ -404,12 +396,17 @@ section.about-me {
                             display: none;
                             width: 8%;
                             position: absolute;
-                            right: 5%;
+                            right: 7%;
                             top: 20%;
                             transform: translateY(-20%);
                             z-index: 4;
                             @include responsive(tablet) {
                                 display: block;
+                                margin-top: 10%;
+                            }
+                            @include responsive(notebook) {
+                                display: block;
+                                margin-top: 5%;
                             }
                             button {
                                 width: 100%;
@@ -499,7 +496,7 @@ section.about-me {
                         margin-top: 1%;
                         transform: translate(0);
                         left: 10%;
-                        bottom: 20%;
+                        bottom: 0%;
                     }
 
                     button {
@@ -527,11 +524,12 @@ section.about-me {
                         .grid-box{
                             // margin-top: 12%;
                             margin-top: 20%;
-                            @include responsive(notebook) {
-                                margin-top: 12%;
+                            @include responsive(tablet) {
+                                margin-top: 20%;
                                 height: 100%;
                             }
                             .about-title {
+                                width: 100%;
                                 display: flex;
                                 position: relative;
                                 // flex-direction: column;
@@ -548,11 +546,16 @@ section.about-me {
                                     width: max-content;
                                     @include hn-eng();
                                     // font-size: 20vmin;
-                                    font-size: 3rem;
+                                    font-size: 5em;
                                     @include responsive(tablet) {
-                                        position: absolute;
+                                        -webkit-text-stroke-width: 1px;
+                                        position: relative;
+                                        left: 30%;
                                         top: 0;
-                                        font-size: 20vmin;
+                                        font-size:8em;
+                                    }
+                                    @include responsive(notebook) {
+                                        font-size: 10em;
                                     }
 
                                     // 첫 번째 h2 요소에 대한 스타일
@@ -567,6 +570,11 @@ section.about-me {
                                         height: 10%;
                                         background-color: $white;
                                         z-index: 3;
+                                        @include responsive(tablet) {
+                                            left: -20%;
+                                            bottom: -10%;
+                                            width: 120%;
+                                        }
                                     }
                                 }
                                 .img-box{
@@ -587,9 +595,9 @@ section.about-me {
                                         @include responsive(tablet) {
                                             position: absolute;
                                             left: 50%;
-                                            width: 60%;
-                                            bottom: 10%;
                                             transform: translateX(-50%);
+                                            width: 70%;
+                                            bottom: 20%;
                                         }
                                     }
                                 }
@@ -607,10 +615,54 @@ section.about-me {
                                 @include borderblack();
                                 @include responsive(tablet) {
                                     padding: 0 4% 1% 10%;
-                                    margin-top: 10vmin;
+                                    margin-top: 0;
+                                    height: auto;
+                                }
+                                @include responsive(notebook) {
+                                    padding: 0 4% 1% 10%;
+                                    margin-top: -10%;
+                                    height: auto;
+                                }
+
+                                .btn-area {
+                                    top: 0;
+                                    position: absolute;
+                                    transform: translateY(0);
+                                    @include responsive(notebook) {
+                                        display: block;
+                                        top: 0;
+                                        margin-top: -5%;
+                                    }
+                                    button {
+                                        width: 100%;
+                                        height: max-content;
+                                        background: none;
+                                        border: 0;
+        
+                                        &:hover img:last-child {
+                                            transform: translate(50%, 10%);
+                                        }
+        
+                                        img {
+                                            width: 100%;
+                                            &:first-child {
+                                                left: 0;
+                                                top: 0;
+                                                transform: translateY(80%);
+                                            }
+                                            &:last-child {
+                                                width: 80%;
+                                                top: 0;
+                                                left: 0;
+                                                transform: translate(-30%, 10%);
+                                                transition: all 0.5s ease-in-out;
+                                            }
+                                        }
+                                    }
                                 }
     
                                 .content-box {
+                                    height: 100%;
                                     position: relative;
                                     // margin-top: 5%;
                                     // margin-left: 5%;
@@ -623,7 +675,6 @@ section.about-me {
                                     z-index: 3;
                                     @include responsive(tablet) {
                                         margin-top: 5%;
-                                        margin-left: 5%;
                                     }
                                     h3 {
                                         width: fit-content;
@@ -635,10 +686,13 @@ section.about-me {
                                         @include borderblack();
                                         background-color: #666;
                                         @include responsive(tablet) {
-                                            font-size: 2rem;
+                                            font-size: 2em;
                                         }
                                         @include responsive(notebook) {
-                                            font-size: 3rem;
+                                            font-size: 2.2em;
+                                        }
+                                        @include responsive(desktop) {
+                                            font-size: 3em;
                                         }
                                     }
     
@@ -650,9 +704,18 @@ section.about-me {
                                         font-size: 1rem;
                                         max-height: 200px;
                                         overflow-y: auto;
+                                        @include responsive(tablet) {
+                                            margin-top: 10%;
+                                            font-size: 1.5em;
+                                            max-height: 14em;
+                                        }
+                                        @include responsive(tablet) {
+                                            margin-top: 10%;
+                                            font-size: 1.5em;
+                                            max-height: 14em;
+                                        }
                                         @include responsive(notebook) {
-                                            font-size: 2.5vmin;
-                                            max-height: none;
+                                            overflow: visible;
                                         }
                                     }
                                 }
@@ -662,6 +725,9 @@ section.about-me {
                             position: absolute;
                             // bottom: -10%;
                             bottom: -20%;
+                            @include responsive(tablet) {
+                                bottom: 0;
+                            }
                             button {
                                 background: none;
                                 border: 0;
@@ -675,6 +741,9 @@ section.about-me {
                                     // width: 100%;
                                     width: 60%;
                                     animation: updown 1s infinite;
+                                    @include responsive(tablet) {
+                                        width: 80%;
+                                    }
                                 }
                             }
                         }
@@ -689,18 +758,39 @@ section.about-me {
 .skills {
     background: url(../image/skill-bg.png) no-repeat center bottom;
     background-size: cover;
+    padding-top: 40%;
+    @include responsive(tablet){
+        padding-top: 20%
+    }
+    @include responsive(notebook){
+        padding-top: 10%
+    }
 
     .flex-box {
         @include flex();
-
         h2 {
             @include hn-eng();
-            font-size: 22vmin;
+            font-size: 6rem;
+            @include responsive(tablet){
+                font-size: 12rem;
+                -webkit-text-stroke-width:  1px;
+            }
+            @include responsive(notebook){
+                font-size: 9rem;
+                -webkit-text-stroke-width:  1px;
+            }
         }
 
         button {
             background: none;
             border: 0;
+            width: 20%;
+            img{
+                width: 100%
+            }
+            @include responsive(tablet){
+                width: 10%
+            }
         }
     }
 
@@ -716,32 +806,122 @@ section.about-me {
         background-color: #fff;
         display: flex;
         justify-content: space-between;
-        flex-wrap: nowrap;
         border: 5px solid $black;
-        padding: 8% 3%;
+        padding: 3%;
         border-radius: 15px;
         box-shadow: 15px 15px #00000086;
-
-        button {
-            background: none;
-            border: 0;
-            cursor: pointer;
+        align-items: center;
+        div{
+            width: 8%;
+            button {
+                background: none;
+                border: 0;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                }
+            }
         }
 
         .slide-box {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            height: 10%;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-height: 21em;
             overflow: hidden;
-            grid-column-gap: 5%;
-            align-items: center;
+            @include responsive(tablet){
+                width: 80%;
+                max-height: 21em;
+            }
+            @include responsive(notebook){
+                width: 100%;
+            }
 
             li {
-                margin: 0 auto;
-
+                width: 100%;
+                padding: 5%;
                 img {
-                    height: 100%;
+                    width: 80%;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include responsive(notebook){
+                        padding-bottom: 1%;
+                        width: 80%;
+                    }
+                }
+                @include responsive(tablet){
+                    width: 50%;
+                }
+                @include responsive(notebook){
+                    padding-bottom: 1%;
+                    width: 33%;
+                }
+                p {
+                    margin-top: 3%;
+                    font-size: 1.5em;
+                    @include responsive(tablet){
+                        font-size: 1.5em;
+                    }
+                    @include responsive(notebook){
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+section.Portfoilo{
+    background-color: #ee3a75;
+    overflow-y: scroll;
+    h2{
+        position: relative;
+        font-size: 5em;
+        text-align: center;
+        @include hn-eng();
+        &::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10%;
+            background-color: #fff;
+            bottom: -10%;
+            left: 0;
+            border: 3px solid #000;
+        }
+    }
+    .flex-box{
+        margin-top: 20%;
+        @include flex();
+        .btn{
+            position: relative;
+            width: 45%;
+            border: 3px solid #000;
+            background-color: #fff;
+            margin: 0 auto;
+            padding: 3% 4%;
+            align-items: center;
+            &:hover {
+                background-color: #999
+            }
+            strong{
+                @include hn-eng;
+                font-size: 1.5em;
+                -webkit-text-stroke-width: 1px;
+                display: block;
+                text-align: center;
+                margin-bottom: 10%;
+            }
+            div{
+                width: 70%;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                img{
+                    width: 100%;
                 }
             }
         }

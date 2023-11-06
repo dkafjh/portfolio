@@ -21,13 +21,13 @@
 @mixin hn-eng() {
     color: $white;
     font-family: $hn-eng;
-    -webkit-text-stroke: 5px $black;
+    -webkit-text-stroke: 0.25rem $black;
 }
 
 @mixin hn-ko() {
     color: $white;
     font-family: $hn-ko;
-    -webkit-text-stroke: 5px $black;
+    -webkit-text-stroke: 0.25rem $black;
 }
 
 @mixin center-pos1() {
@@ -78,7 +78,7 @@
     }
 
     @else if $break == desktopLarge {
-        @media all and (min-width:$break-desktop-large) {
+        @media all and (min-width:$break-desktopLarge) {
             @content;
         }
     }
