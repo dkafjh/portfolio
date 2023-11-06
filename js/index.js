@@ -7,7 +7,8 @@ window.onload = function () {
         function scrollToSection(index) {
             window.scrollTo({
                 top: index * windowHeight,
-                behavior: 'smooth'
+                behavior: 'smooth',
+                duration: 5000
             });
         }
     
