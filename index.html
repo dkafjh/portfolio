@@ -6,7 +6,6 @@
     <meta Description="자기소개 포트폴리오">
     <meta Author="조원태">
     <link rel="stylesheet" href="./css/index.css">
-    <title>조원태 자기소개 포트폴리오</title>
     <script>
         (function(d) {
           var config = {
@@ -17,6 +16,8 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
+    <script src="./js/index.js"></script>
+    <title>조원태 자기소개 포트폴리오</title>
 </head>
 <body>
     <header>
@@ -193,6 +194,9 @@
                     </li>
                 </ul>
             </div><!--slide-box-->
+            <div class="corner-img">
+                <img src="./image/about-corner.png" alt="about-corner">
+            </div>
         </section>
 
         
@@ -262,16 +266,16 @@
                             </div>
                         </div>
                         <div class="design-btn btn">
-                            <strong>DESIGN & VIDEO</strong>
+                            <strong>Javas & react</strong>
                             <div>
-                                <img src="./image/designvideo.png" alt="designvideo">
+                                <img src="./image/javascriot.png" alt="designvideo">
                             </div>
                         </div>
                     </div><!--flex-box-->
                 </div><!--select-btn-->
                 <div class="web-pofol">
                     <h3>WEB</h3>
-                    <div class="my-protein">
+                    <div class="my-protein pofol">
                         <div class="content-box">
                             <h4>마이프로틴 개인 포트 폴리오</h4>
                             <ul>
@@ -279,12 +283,16 @@
                                 <li>사용기술:HTML, CSS</li>
                                 <li>마이프로틴 메인 홈페이지를 리뉴얼 하여 보다 직관적이고 다양한 트렌지션과 애니메이션으로 UX를 보완하였습니다.</li>
                             </ul>
+                            <div class="button-box">
+                                <button><a href="#">SITE</a></button>
+                                <button><a href="#">GIT</a></button>
+                            </div>
                         </div>
                         <div class="img-box">
                             <img src="./image/myprotein.png" alt="myprotein">
                         </div>
                     </div>
-                    <div class="everland">
+                    <div class="everland pofol">
                         <div class="img-box">
                             <img src="./image/everland.png" alt="everland">
                         </div>
@@ -293,13 +301,34 @@
                             <ul>
                                 <li>제작기간:06.27~ 07.21</li>
                                 <li>사용기술:HTML, CSS, javascript, jquery</li>
-                                <li>마이프로틴 메인 홈페이지를 리뉴얼 하여 보다 직관적이고 다양한 트렌지션과 애니메이션으로 UX를 보완하였습니다.</li>
+                                <li>에버랜드 전체 페이지를 리뉴얼 하여 메뉴를 최적화 하고, 메인화면을 원페이지 스크롤로 구현해 보았습니다.</li>
                             </ul>
+                            <div class="button-box">
+                                <button><a href="#">SITE</a></button>
+                                <button><a href="#">GIT</a></button>
+                            </div>
                         </div>
                     </div>
                 </div><!--web-pofol-->
-                <div class="design-pofol">
-                    <h3>DESIGN & VIDEO</h3>
+                <div class="java-pofol">
+                    <h3>Javascript</h3>
+                    <div class="everland pofol">
+                        <div class="img-box">
+                            <img src="./image/everland.png" alt="everland">
+                        </div>
+                        <div class="content-box">
+                            <h4>피자스쿨 키오스크</h4>
+                            <ul>
+                                <li>제작기간:06.27~ 07.21</li>
+                                <li>사용기술:HTML, CSS, javascript</li>
+                                <li>마이프로틴 메인 홈페이지를 리뉴얼 하여 보다 직관적이고 다양한 트렌지션과 애니메이션으로 UX를 보완하였습니다.</li>
+                            </ul>
+                            <div class="button-box">
+                                <button><a href="#">SITE</a></button>
+                                <button><a href="#">GIT</a></button>
+                            </div>
+                        </div>
+                    </div>
                 </div><!--design-pofol-->
             </div>
         </section>
@@ -307,12 +336,12 @@
         <section class="contact">
             <div class="wrapper">
                 <h2>Contact</h2>
-                <form action="post">
+                <form action="post" class="content-box">
                     <fieldset>
-                        <div>
-                            <div>
+                        <div class="email-sns">
+                            <div class="email">
                                 <label for="email">EMAIL</label>
-                                <input id="email" type="email">
+                                <input id="email" type="email" placeholder="abcde@aaa.com">
                                 <label for="phone">PHONE NUMBER</label>
                                 <input type="tel" id="phone">
                             </div>
@@ -323,14 +352,14 @@
                                 <button><a href=""><img src="./image/git hub.png" alt="git hub"></a></button>
                             </div>
                         </div>
-                        <div>
+                        <div class="textarea">
                             <label for="text">TEXT AREA</label>
-                            <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                            <textarea name="text" id="text" cols="300" rows="14"></textarea>
                         </div>
                     </fieldset>
                 </form>
-                <button>TOP ↑</button>
             </div>
+            <button id="top-btn">TOP ↑</button>
         </section>
     </main>
     <footer></footer>
