@@ -16,11 +16,6 @@
           h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
         })(document);
       </script>
-<<<<<<< HEAD
-=======
-    <script src="./js/index.js" defer></script>
-    <script src="./js/hamburgerbtn.js" defer></script>
->>>>>>> fc8fd0bc86e8e637d38caedf874c67ff4d3751a1
     <title>조원태 자기소개 포트폴리오</title>
 </head>
 <body>
@@ -310,8 +305,8 @@
                                 <li>마이프로틴 메인 홈페이지를 리뉴얼 하여 보다 직관적이고 다양한 트렌지션과 애니메이션으로 UX를 보완하였습니다.</li>
                             </ul>
                             <div class="button-box">
-                                <button><a href="#">SITE</a></button>
-                                <button><a href="#">GIT</a></button>
+                                <button><a href="https://dkafjh.github.io/" target="_blank">SITE</a></button>
+                                <button><a href="https://github.com/dkafjh/myprotein" target="_blank">GIT</a></button>
                             </div>
                         </div>
                         <div class="img-box">
@@ -338,7 +333,7 @@
                 </div><!--web-pofol-->
                 <div class="java-pofol">
                     <h3>Javascript</h3>
-                    <div class="everland pofol">
+                    <div class="pizza-school pofol">
                         <div class="img-box">
                             <img src="./image/everland.png" alt="everland">
                         </div>
@@ -362,7 +357,7 @@
         <section class="contact">
             <div class="wrapper">
                 <h2>Contact</h2>
-                <form action="post" class="content-box">
+                <div class="content-box">
                     <fieldset>
                         <div class="email-sns">
                             <div class="email">
@@ -372,10 +367,10 @@
                                 <input type="tel" id="phone">
                             </div>
                             <div class="sns">
-                                <button><a target="_blank" href=""><img src="./image/instagram.png" alt="insta"></a></button>
-                                <button><a href=""><img src="./image/kakaotalk.png" alt="kakao"></a></button>
-                                <button><a href=""><img src="./image/facebook.png" alt="facebook"></a></button>
-                                <button><a href=""><img src="./image/git hub.png" alt="git hub"></a></button>
+                                <button><a target="_blank" href="https://www.instagram.com/taiwon_no.1"><img src="./image/instagram.png" alt="insta"></a></button>
+                                <button class="kakao-btn"><a href="#" onclick="return false"><img src="./image/kakaotalk.png" alt="kakao"></a></button>
+                                <button><a target="_blank" href="https://www.facebook.com/profile.php?id=100005438408713&locale=ko_KR"><img src="./image/facebook.png" alt="facebook"></a></button>
+                                <button><a target="_blank" href="https://github.com/dkafjh"><img src="./image/git hub.png" alt="git hub"></a></button>
                             </div>
                         </div>
                         <div class="textarea">
@@ -383,12 +378,16 @@
                             <textarea name="text" id="text" cols="300" rows="14"></textarea>
                         </div>
                     </fieldset>
-                </form>
+                </div>
+            </div>
+            <div id="modal">
+                <img src="./image/go-kakako.jpg" alt="gokakako">
+                <button class="close-btn">닫기</button>
             </div>
             <button id="top-btn">TOP ↑</button>
         </section>
     </main>
-    <footer></footer>
+    <footer><span>@Copyright Chowontai  ALL Right Reserved</span><h1><img src="./image/logo-black.png" alt="logo"></h1></footer>
 </body>
 <script src="./js/skill.js" defer></script>
 <script src="./js/hamburgerbtn.js" defer></script>

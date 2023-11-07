@@ -136,6 +136,22 @@ function makeChart(percent, classname, color) {
     }, 10);
 }
 
+function makeChart(percent, classname, color) {
+    let i = 1;
+    let chartFn = setInterval(function () {
+        if (i < percent) {
+            colorFn(i, classname, color);
+            i++;
+        } else {
+            clearInterval(chartFn);
+        }
+    }, 10);
+}
+
+function colorFn(i, classname, color) {
+    classname.style.backgroundImage = `conic-gradient(${color} 0% ${i}%, #dedede ${i}% 100%)`;
+}
+
 function viewChart(event) {
     const skillList = event.currentTarget;
 
@@ -174,6 +190,31 @@ function viewChart(event) {
 
 skillLists.forEach((skillList) => {
     skillList.addEventListener('mouseover', viewChart);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 버튼 요소들을 선택합니다.
+    const webBtn = document.querySelector('.web-btn');
+    const designBtn = document.querySelector('.design-btn');
+
+    // 클릭 이벤트 리스너를 추가합니다.
+    webBtn.addEventListener('click', () => scrollToSection('.web-pofol'));
+    designBtn.addEventListener('click', () => scrollToSection('.java-pofol'));
+
+    function scrollToSection(sectionClassName) {
+        // 섹션의 클래스 이름으로 해당 섹션 요소를 찾습니다.
+        const section = document.querySelector(sectionClassName);
+        
+        if (section) {
+            // 해당 섹션 내에서 h3 요소를 찾습니다.
+            const h3Element = section.querySelector('h3');
+            
+            if (h3Element) {
+                // h3 요소가 찾아졌을 경우 해당 h3 요소로 스크롤합니다.
+                h3Element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }
 });
 
 

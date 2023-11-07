@@ -90,6 +90,7 @@ aside {
 }
 
 body {
+  position: relative;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -1625,7 +1626,7 @@ section.Portfoilo .web-pofol .pofol {
   section.Portfoilo .web-pofol .pofol .content-box {
     width: 50%;
     background-color: #fff;
-    margin-top: 2%;
+    margin: 2%;
     border: 3px solid #000;
   }
 }
@@ -1647,6 +1648,7 @@ section.Portfoilo .web-pofol .pofol .content-box .button-box {
 @media all and (min-width: 768px) {
   section.Portfoilo .web-pofol .pofol .content-box .button-box {
     justify-content: center;
+    margin-bottom: 2%;
   }
 }
 section.Portfoilo .web-pofol .pofol .content-box .button-box button {
@@ -1661,7 +1663,7 @@ section.Portfoilo .web-pofol .pofol .content-box .button-box button {
   }
 }
 section.Portfoilo .web-pofol .pofol .content-box .button-box button:hover {
-  background-color: #fff;
+  background-color: #999;
 }
 section.Portfoilo .web-pofol .pofol .content-box .button-box button a {
   font-size: 1.2em;
@@ -1776,4 +1778,50 @@ section.contact #top-btn {
   border: 3px solid #000;
   font-size: 1.5em;
   font-weight: bold;
+}
+section.contact #modal {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(153, 153, 153, 0.3137254902);
+  z-index: 99999;
+}
+section.contact #modal img {
+  height: 80%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+section.contact #modal button {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+  font-size: 2em;
+}
+
+footer {
+  padding: 0 40%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgba(29, 29, 29, 0.758);
+}
+footer span {
+  line-height: 30px;
+  color: #fff;
+}
+footer h1 {
+  height: 100%;
+}
+footer h1 img {
+  height: 100%;
 }/*# sourceMappingURL=index.css.map */
