@@ -302,7 +302,6 @@ section.about-me .wrapper .sub-list {
 }
 @media all and (min-width: 1600px) {
   section.about-me .wrapper .sub-list {
-    width: -moz-max-content;
     width: max-content;
     display: block;
     border: 0;
@@ -411,7 +410,6 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title {
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -503,7 +501,6 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -634,7 +631,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -731,7 +727,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -771,7 +766,6 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -870,7 +864,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -967,7 +960,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -1007,7 +999,6 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -1106,7 +1097,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title 
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
-  width: -moz-max-content;
   width: max-content;
   color: #fff;
   font-family: "SDSwagger";
@@ -1203,7 +1193,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .btn-area button {
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   background: none;
   border: 0;
@@ -1243,7 +1232,6 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box h3 {
-  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
@@ -1478,6 +1466,10 @@ section.about-me .corner-img:hover {
   width: 80%;
   text-align: center;
   font-size: 1.3em;
+}
+.skills .skills-info button {
+  background: none;
+  border: 0;
 }
 
 section.Portfoilo {
