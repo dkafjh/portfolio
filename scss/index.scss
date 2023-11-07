@@ -16,11 +16,6 @@ $header-px: 156px;
     }
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
 
 .wrapper {
     width: auto;
@@ -30,13 +25,20 @@ body {
     position: relative;
 }
 
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 section {
     padding-top: $header-px;
     width: 100%;
-    height: 100vh;
-    overflow-y: hidden;
-    overflow-x: auto;
+    height: 100vh; /* 섹션의 높이를 화면 높이(100vh)로 설정 */
+    overflow: hidden; /* 섹션 내에서 세로 스크롤 허용 */
 }
+
 
 button {
     cursor: pointer;
@@ -64,6 +66,7 @@ header {
             display: block;
             width: 40px;
             right: 20%;
+            cursor: pointer;
 
             div {
                 width: 100%;
@@ -78,13 +81,14 @@ header {
         }
 
         .menu-box {
-            display: none;
+            transition: all 0.3s ease-in-out;
+            display: block;
             background-color: rgb(56, 127, 189);
             padding: 5% 0;
             position: absolute;
             z-index: 9999999;
             top: 0;
-            right: 0;
+            right: -70%;
             width: 70%;
             height: 100vh;
 
@@ -216,6 +220,7 @@ section.about-me {
     width: 100%;
     padding: 0;
     position: relative;
+    overflow: hidden;
     .wrapper {
         .sub-list {
             position: fixed;
@@ -243,7 +248,9 @@ section.about-me {
                 top: 50%;
                 transform: translateY(-50%);
             }
-
+            
+            
+            
             li {
                 width: 100%;
                 color: #fff;
@@ -289,22 +296,26 @@ section.about-me {
                 }
             }
         }
+        .none{
+            display: none;
+        }
     }
 
     .slide-box {
         .flex-box {
+            position: relative;
             width: 400%;
             display: flex;
             justify-content: space-between;
 
             .info {
+                position: relative;
                 padding-top: $header-px;
                 width: (400% / 4);
-                overflow-y: hidden;
-                overflow-x: scroll;
                 height: 100vh;
                 background: url(../image/about-bg.png) no-repeat bottom center;
                 background-size:cover;
+                transition: all 0.5s ease-in-out;
 
                 .grid-box {
                     position: relative;
@@ -501,6 +512,7 @@ section.about-me {
                     left: 50%;
                     transform: translateX(-50%);
                     @include responsive(tablet) {
+                        z-index: 9;
                         font-size: 1.5em;
                         margin-top: 1%;
                         transform: translate(0);
@@ -825,82 +837,96 @@ section.about-me {
     }
 
     .skills-info {
+        position: relative;
         width: 100%;
         background-color: #fff;
-        display: flex;
         justify-content: space-between;
         border: 5px solid $black;
-        padding: 3%;
+        padding: 3% 5%;
         border-radius: 15px;
         box-shadow: 15px 15px #00000086;
         align-items: center;
-        div{
-            width: 8%;
-            button {
+            .right-btn{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
                 background: none;
                 border: 0;
-                cursor: pointer;
                 img{
-                    width: 100%;
-                }
-            }
-        }
-
-        .slide-box {
-            width: 70%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            max-height: 21em;
-            overflow: hidden;
-            @include responsive(tablet){
-                width: 80%;
-                max-height: 21em;
-            }
-            @include responsive(notebook){
-                width: 100%;
-            }
-
-            li {
-                width: 100%;
-                padding: 5%;
-                img {
-                    width: 80%;
-                    position: relative;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    @include responsive(notebook){
-                        padding-bottom: 1%;
-                        width: 80%;
-                    }
-                }
-                @include responsive(tablet){
-                    width: 50%;
-                }
-                @include responsive(notebook){
-                    padding-bottom: 1%;
-                    width: 33%;
-                }
-                p {
-                    margin-top: 3%;
-                    font-size: 1.5em;
+                    width: 60%;
                     @include responsive(tablet){
-                        font-size: 1.5em;
+                        width: 90%;
                     }
-                    @include responsive(notebook){
-                        font-size: 1.2em;
+                }
+            }
+            .left-btn{
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: none;
+                border: 0;
+                img{
+                    width: 60%;
+                    @include responsive(tablet){
+                        width: 90%;
+                    }
+                }
+            }
+            .skill-list{
+                .img-box{
+                    position: relative;
+                    max-height: 270px;
+                    .chart{
+                        opacity: 0;
+                        width: 200px;
+                        height: 200px;
+                        position: relative;
+                        left: 50%;
+                        top: -240px;
+                        transform: translateX(-50%);
+                        border-radius: 50%;
+                        transition: all 0.1s ease-in-out;
+                        span.center {
+                            background: #fff;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 50%;
+                            text-align: center;
+                            line-height: 100px;
+                            font-size: 17px;
+                            font-weight: 400;
+                            transform: translate(-50%, -50%); //가운데 위
+                        }
                     }
                 }
             }
         }
-    }
+        img{
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        p{  
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            width: 80%;
+            text-align: center;
+            font-size: 1.3em;
+        }
+        
 }
-
 
 section.Portfoilo{
     background: url(../image/profile-bg.png) no-repeat center;
     background-size:100%;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: visible;
     h2{
         position: relative;
         font-size: 5em;
@@ -1012,6 +1038,8 @@ section.Portfoilo{
                 @include responsive(tablet) {
                     width: 50%;
                     background-color: #fff;
+                    margin-top:2%;
+                    border: 3px solid #000;
                 }
                 h4 {
                     font-size: 2em;
@@ -1108,8 +1136,8 @@ section.contact{
                         font: {
                             size: 2em;
                             weight: 400;
-                            padding: 2%;
                         }
+                        padding: 2%;
                         margin-top: 5%;
                     }
                     input{
