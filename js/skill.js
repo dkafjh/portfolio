@@ -89,7 +89,6 @@ var Slider = function (id, _web, _tab, _mobile, spacing) {
     }
     resize();
 
-
     return {
         setDisplayCount: setDisplayCount,
         move: function (index) {
@@ -118,8 +117,6 @@ var Slider = function (id, _web, _tab, _mobile, spacing) {
     }
 }
 
-
-
 var slider = new Slider('slider', 3, 2, 1, 10);
 
 const skillLists = document.querySelectorAll('.skill-list');
@@ -130,27 +127,16 @@ function makeChart(percent, classname, color) {
         if (i < percent) {
             colorFn(i, classname, color);
             i++;
-        } else {
-            clearInterval(chartFn);
-        }
-    }, 10);
-}
-
-function makeChart(percent, classname, color) {
-    let i = 1;
-    let chartFn = setInterval(function () {
-        if (i < percent) {
-            colorFn(i, classname, color);
-            i++;
-        } else {
-            clearInterval(chartFn);
         }
     }, 10);
 }
 
 function colorFn(i, classname, color) {
-    classname.style.backgroundImage = `conic-gradient(${color} 0% ${i}%, #dedede ${i}% 100%)`;
+    if (classname) { // classname이 null 또는 undefined가 아닌 경우에만 실행
+        classname.style.backgroundImage = `conic-gradient(${color} 0% ${i}%, #dedede ${i}% 100%)`;
+    }
 }
+
 
 function viewChart(event) {
     const skillList = event.currentTarget;
@@ -204,11 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function scrollToSection(sectionClassName) {
         // 섹션의 클래스 이름으로 해당 섹션 요소를 찾습니다.
         const section = document.querySelector(sectionClassName);
-        
+
         if (section) {
             // 해당 섹션 내에서 h3 요소를 찾습니다.
             const h3Element = section.querySelector('h3');
-            
+
             if (h3Element) {
                 // h3 요소가 찾아졌을 경우 해당 h3 요소로 스크롤합니다.
                 h3Element.scrollIntoView({ behavior: 'smooth' });
@@ -216,5 +202,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
-
-
