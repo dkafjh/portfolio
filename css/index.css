@@ -1517,6 +1517,11 @@ section.about-me .corner-img:hover {
   box-shadow: 15px 15px rgba(0, 0, 0, 0.5254901961);
   align-items: center;
 }
+@media all and (min-width: 1024px) {
+  .skills .skills-info {
+    width: 100%;
+  }
+}
 .skills .skills-info .right-btn {
   width: 10%;
   position: absolute;

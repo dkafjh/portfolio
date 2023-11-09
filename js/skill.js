@@ -117,7 +117,7 @@ var Slider = function (id, _web, _tab, _mobile, spacing) {
     }
 }
 
-var slider = new Slider('slider', 3, 2, 1, 10);
+var slider = new Slider('slider', 3, 2, 1, 0);
 
 const skillLists = document.querySelectorAll('.skill-list');
 
