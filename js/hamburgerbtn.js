@@ -1,12 +1,6 @@
 const openBtn = document.getElementById('open-btn');
 const $menuBox = document.querySelector('.menu-box');
 const closeBtn = document.getElementById('close-btn');
-const topBtn = document.getElementById('top-btn');
-
-topBtn.addEventListener('click' , function() {
-    window.scrollTo({top : 0 , behavior : 'smooth'});
-})
-
 
 
 openBtn.addEventListener('click' , function(){
@@ -17,3 +11,11 @@ openBtn.addEventListener('click' , function(){
 closeBtn.addEventListener('click' , function(){
     $menuBox.style.right = '-70%'
 })
+
+
+const pizzaSchoolButton = document.querySelectorAll('.pizzaschool button a')
+
+pizzaSchoolButton[0].addEventListener('click', e => {
+    e.preventDefault();
+    alert('준비중입니다!')
+});

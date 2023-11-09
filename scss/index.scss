@@ -92,7 +92,7 @@ header {
             background-color: rgb(56, 127, 189);
             padding: 5% 0;
             position: absolute;
-            z-index: 9999999;
+            z-index: 99999999999999;
             top: 0;
             right: -70%;
             width: 70%;
@@ -240,7 +240,7 @@ section.about-me {
             display: grid;
             grid-template-columns: repeat(4, 1fr); 
             grid-column-gap: 10%;
-            z-index: 99;
+            z-index: 4;
             background-color: $white;
             padding: 3% 2%;
             border-radius: 10px;
@@ -899,6 +899,9 @@ section.about-me {
                 @include responsive(tablet){
                     width: 5%;
                 }
+                @include responsive(notebook){
+                    width: 4%;
+                }
                 img{
                     width: 100%;
                 }
@@ -915,11 +918,11 @@ section.about-me {
                 @include responsive(tablet){
                     width: 5%;
                 }
+                @include responsive(notebook){
+                    width: 4%;
+                }
                 img{
                     width: 100%;
-                    @include responsive(tablet){
-                        width: 100%;
-                    }
                 }
             }
             .skill-list{
@@ -932,6 +935,7 @@ section.about-me {
                         width: 130px;
                         height: 130px;
                         position: relative;
+                        top: 10px;
                         left: 50%;
                         transform: translateX(-50%);
                         border-radius: 50%;
@@ -942,9 +946,14 @@ section.about-me {
                             height: 230px;
                         }
                         @include responsive(notebook){
-                            top: 10px;
-                            width: 200px;
-                            height: 200px;
+                            top: 15px;
+                            width: 170px;
+                            height: 170px;
+                        }
+                        @include responsive(tablet){
+                            top: 11.5px;
+                            width: 230px;
+                            height: 230px;
                         }
                         span.center {
                             background: #fff;
@@ -966,16 +975,28 @@ section.about-me {
                                 line-height: 170px;
                             }
                             @include responsive(notebook){
-                                width: 150px;
-                                height: 150px;
+                                width: 130px;
+                                height: 130px;
                                 font-size: 25px;
-                                line-height: 150px;
+                                line-height: 130px;
+                            }
+                            @include responsive(desktop){
+                                width: 170px;
+                                height: 170px;
+                                font-size: 25px;
+                                line-height: 170px;
                             }
                         }
                     }
                     img{
                         height: 150px;
                         @include responsive(tablet){
+                            height: 250px;
+                        }
+                        @include responsive(notebook){
+                            height: 200px;
+                        }
+                        @include responsive(desktop){
                             height: 250px;
                         }
                         position: absolute;
@@ -991,6 +1012,16 @@ section.about-me {
                     width: 80%;
                     text-align: center;
                     font-size: 1.2em;
+                    font-weight: 300;
+                    @include responsive(notebook){
+                        margin-top: 6vh;
+                        width: 60%;
+                    }
+                    @include responsive(desktop){
+                        margin-top: 2vh;
+                        font-size: 1.5em;
+                        width: 80%;
+                    }
                 }
                 }
         }
@@ -1090,11 +1121,16 @@ section.pofol{
     background-size: cover;
     h2{
         @include hn-eng();
-        font-size: 5em;
+        font-size: 4em;
         background-color: #fff;
         border: 3px solid #000;
         padding: 2% 0 2% 5% ;
         position: relative;
+        @include responsive(tablet) {
+            font-size: 5em;
+            -webkit-text-stroke-width: 1px;
+            margin-top: 5%;
+        }
         @include responsive(notebook) {
             font-size: 7em;
             -webkit-text-stroke-width: 1px;
@@ -1130,18 +1166,38 @@ section.pofol{
                 width: 50%;
                 background-color: #fff;
                 border-right: 3px solid #000;
+                &:nth-child(even){
+                    border-right: 0;
+                }
             }
             h3 {
-                font-size: 5vmin;
+                font-size: 1.3em;
                 margin: 2% 3%;
+                @include responsive(tablet) {
+                    font-size: 1.9em;
+                    width: 80%;
+                }
+                @include responsive(desktop) {
+                    font-size: 2.5em;
+                    width: 90%;
+                    margin: 10% 2%;
+                }
             }
             ul {
                 padding: 3%;
+                @include responsive(desktop) {
+                    padding: 2%;
+                }
                 li{
                     font-size: 1.2em;
                     margin-bottom: 3%;
                     @include responsive(tablet) {
+                        font-size: 1.3em;
                         margin-bottom: 5%;
+                    }
+                    @include responsive(desktop) {
+                        font-size: 1.5em;
+                        margin-bottom: 10%;
                     }
                 }
             }
@@ -1170,18 +1226,26 @@ section.pofol{
                             family: 'yoonche';
                             weight: 600;
                         }
+                        @include responsive(tablet) {
+                            font-size: 1.5em;
+                        }
                     }
                 }
             }
         }
         .img-box {
             width: 100%;
-            margin-top: 5%;
+            @include responsive(tablet) {
+                margin-top: 5%;
+            }
             img{
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 90%;
+                width: 100%;
+                @include responsive(tablet) {
+                    width: 90%;
+                }
             }
         }
     }
@@ -1201,6 +1265,78 @@ section.everland {
             flex-direction: row;
         }
     }
+    .content-box{
+        border-top: 3px solid #000;
+        @include responsive(tablet) {
+            border-right: 0;
+            border-left: 3px solid #000;
+        }
+    }
+}
+
+section.java {
+    h2 {
+        &::after{
+            content: '';
+            height: 80%;
+            background: url(../image/free-icon-java-script-721791.png) no-repeat center;
+            background-size: contain;
+            width: 40%;
+            position: absolute;
+            right: -5%;
+            top: 50%;
+            transform: translateY(-50%);
+            @include responsive(tablet) {
+                left: 29%;
+            }
+        }
+    }
+    .img-box{
+        max-height: 200px;
+        overflow: hidden;
+        border-bottom: 1px solid #000;
+        @include responsive(tablet) {
+            height: 300px;
+        }
+        @include responsive(notebook) {
+            max-height: 400px;
+        }
+        @include responsive(desktop) {
+            max-height: 450px;
+            height: 900px;
+        }
+        img{
+            width: auto;
+            height: 100%;
+        }
+    }
+    .button-box {
+        button{
+            @include responsive(tablet) {
+                margin: 0;
+            }
+        }
+    }
+}
+
+section.react{
+    h2 {
+        margin-top: 0;
+        &::after{
+            content: '';
+            height: 80%;
+            background: url(../image/pngwing.com\ \(1\).png) no-repeat center;
+            background-size: contain;
+            width: 40%;
+            position: absolute;
+            right: 4%;
+            top: 50%;
+            transform: translateY(-50%);
+            @include responsive(tablet) {
+                left: 10%;
+            }
+        }
+    }
 }
 
 
@@ -1208,91 +1344,140 @@ section.contact{
     background:url(../image/contact-bg.png) no-repeat center;
     background-size: cover;
     position: relative;
-    h2{
-        text-align: center;
-        @include hn-eng();
-        font-size: 7em;
+
+    .wrapper{
+        margin-top: -10%;
         @include responsive(tablet){
-            margin-top: 8%;
-            font-size: 10em;
-        }
-        @include responsive(notebook){
-            margin-top: 5%;
-            font-size: 9em;
-            -webkit-text-stroke-width: 1px;
+            margin-top: 0;
         }
     }
-    .content-box {
-        fieldset{
-            display: flex;
-            box-shadow: 15px 15px #666;
-            border: 3px solid #000;
+
+    h2 {
+        @include hn-eng();
+        text-align: center;
+        font-size: 5em;
+        @include responsive(tablet){
+            font-size: 7em;
+        }
+    }
+    .content-box{
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding:5%;
+        border: 3px solid #000;
+        box-shadow: 10px 10px #666;
+        @include responsive(notebook){
             padding: 5% 10%;
-            background-color: #fff;
-            border-radius: 15px;
-            .email-sns{
+        }
+        .email-textbox{
+            display: flex;
+            flex-direction: column;
+            @include responsive(tablet){
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .email{
                 display: flex;
                 flex-direction: column;
-                .email{
-                    display: grid;
-                    grid-template-columns: repeat(1fr);
+                @include responsive(tablet){
+                    flex-direction: column;
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
                     input,
-                    label {
-                        font: {
-                            size: 2em;
-                            weight: 400;
+                    label{
+                        font-size: 1.2em;
+                        font-weight: 400;
+                        margin-bottom: 1%;
+                        @include responsive(tablet){
+                            font-size: 1.6em;
+                            width: 90%;
+                            margin-bottom: 3vh;
                         }
-                        padding: 2%;
-                        margin-top: 5%;
+                        @include responsive(notebook){
+                            font-size: 1.6em;
+                            width: 100%;
+                            margin-bottom: 3vh;
+                        }
                     }
                     input{
                         border: 3px solid #000;
+                        padding: 1%;
                     }
-                }
-                .sns {
-                    margin-top: 10%;
-                    display: flex;
-                    justify-content: space-between;
-                    button{
-                        background: none;
-                        border: 0;
-                        img{
-                            transition: all 0.1s ease-in;
-                        }
-                        &:hover img{
-                            opacity: 0.5;
-                        }
+                    @include responsive(tablet){
+                        display: flex;
+                        flex-direction: column;
                     }
                 }
             }
             .textarea{
-                margin-left: 10%;
-                display: flex;
-                flex-direction: column;
                 label{
-                    font: {
-                        size: 2em;
-                        weight: 400;
+                    font-size: 1.2em;
+                    font-weight: 400;
+                    margin-bottom: 4%;
+                    @include responsive(tablet){
+                        font-size: 1.7em;
                     }
                 }
                 textarea{
+                    font-size: 1.2em;
                     width: 100%;
                     border: 3px solid #000;
+                    padding: 1%;
+                    @include responsive(tablet){
+                        font-size: 1.7em;
+                    }
                 }
+            }
+        }
+        .sns{
+            display: flex;
+            justify-content: space-between;
+            button{
+                background: none;
+                border: 0;
+            }
+            @include responsive(tablet){
+                margin-top: -10%;
+                width: 35%;
+            }
+            @include responsive(notebook){
+                margin-top: -10%;
+                width: 30%;
             }
         }
     }
     #top-btn{
         position: absolute;
-        right: 20%;
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
+        top: 17vh;
+        right: 0;
         border-radius: 50%;
-        top: 50%;
         border: 3px solid #000;
         font : {
-            size: 1.5em;
+            size: 1.2em;
             weight: bold;
+        }
+        @include responsive(tablet){
+            top: 16vh;
+            right: 10%;
+        }       
+        @include responsive(notebook){
+            top: 22vh;
+        }
+        @include responsive (desktop){
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            transform: translateY(-50%);
+            font : {
+                size: 1.5em;
+                weight: bold;
+            }
         }
     }
     #modal{
@@ -1322,7 +1507,7 @@ section.contact{
 }
 
 footer{
-    padding: 0 40%;
+    padding: 0 5%;
     height: 30px;
     position: absolute;
     bottom: 0;
@@ -1331,9 +1516,19 @@ footer{
     width: 100%;
     justify-content: space-between;
     background-color: rgba(29, 29, 29, 0.758);
+    @include responsive(desktop){
+        height: 40px;
+    }
     span{
-        line-height: 30px;
+    line-height: 30px;
         color: #fff;
+        font-size: 0.7em;
+        @include responsive(tablet){
+            font-size: 1em;
+        }
+        @include responsive(desktop){
+            font-size: 1.5em;
+        }
     }
     h1 {
         height: 100%;
@@ -1342,3 +1537,4 @@ footer{
         }
     }
 }
+

@@ -1,7 +1,4 @@
 window.onload = function () {
-
-    
-
     let touchStartY = null;
     const logo = document.querySelector('h1')
     const sections = document.querySelectorAll('section');
@@ -44,7 +41,6 @@ window.onload = function () {
     gnbLists.forEach((link, idx) => {
         link.addEventListener('click', e => {
             e.preventDefault();
-            scrollToSection(idx + 1);
             if (idx === 0) {
                 setTimeout(() => {
                     removeNoneClass()
@@ -54,7 +50,9 @@ window.onload = function () {
                 addNoneClass();
             }
             if (idx === 3) {
-                scrollToSection(6)
+                scrollToSection(idx + 6);
+            } else {
+                scrollToSection(idx + 1);
             }
         })
     })
@@ -135,7 +133,16 @@ window.onload = function () {
         t -= 2;
         return c / 2 * (t * t * t + 2) + b;
     }
-    
+
+    const topButton = document.getElementById('top-btn'); // 탑 버튼의 HTML 요소를 찾아야 함
+    topButton.addEventListener('click', () => {
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // 부드럽게 스크롤
+    });
+    currentSection = 0;
+});
+
     window.addEventListener('wheel', (event) => {
         const delta = event.deltaY;
         if (delta > 0 && currentSection < sections.length - 1) {
@@ -144,7 +151,21 @@ window.onload = function () {
             scrollToSection(currentSection - 1);
         }
     });
+
+
+const webBtn = document.querySelector('.web-btn');
+const designBtn = document.querySelector('.design-btn');
+
+webBtn.addEventListener('click' , e => {
+    scrollToSection(4);
+})
+
+designBtn.addEventListener('click' , e => {
+    scrollToSection(6);
+})
+
     
+
     let isTouching = false;
 
     window.addEventListener('pointerdown', (event) => {
@@ -175,7 +196,6 @@ window.onload = function () {
         touchStartY = null;
         isTouching = false;
     });
-    
     
 
     const section1 = document.querySelector('.about-me');
