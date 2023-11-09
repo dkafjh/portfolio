@@ -151,8 +151,8 @@ function viewChart(event) {
     const chart = skillList.querySelector('.chart');
     const $img = skillList.querySelector('img');
 
-    $img.style.opacity = 0.5;
-    chart.style.opacity = 1;
+    $img.style.opacity = 1;
+    chart.style.opacity = 0.9;
 
     const chart90 = skillList.querySelector('.doughnut90');
     const chart85 = skillList.querySelector('.doughnut85');

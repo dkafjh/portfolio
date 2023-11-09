@@ -104,9 +104,9 @@ section {
   position: relative;
   padding-top: 156px;
   width: 100%;
-  height: 100vh; /* 섹션의 높이를 화면 높이(100vh)로 설정 */
+  height: 100vh;
+  height: calc(100vh - var(--vh, 0px)); /* 섹션의 높이를 화면 높이(100vh)로 설정 */
   overflow: hidden; /* 섹션 내에서 세로 스크롤 허용 */
-  transition: 2s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
 button {
@@ -118,7 +118,7 @@ header {
   width: 100%;
   max-width: 1280px;
   height: 156px;
-  z-index: 999;
+  z-index: 99;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -159,6 +159,7 @@ header .flex-box .menu-box {
   right: -70%;
   width: 70%;
   height: 100vh;
+  height: calc(100vh - var(--vh, 0px));
 }
 @media all and (min-width: 1024px) {
   header .flex-box .menu-box {
@@ -246,6 +247,8 @@ header .flex-box .menu-box .gnb li:hover a {
 .title {
   position: relative;
   overflow: hidden;
+  height: 100vh;
+  height: calc(100vh - var(--vh, 0px));
 }
 .title .title-bg {
   position: absolute;
@@ -295,7 +298,7 @@ section.about-me .wrapper .sub-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10%;
-  z-index: 9999;
+  z-index: 99;
   background-color: #fff;
   padding: 3% 2%;
   border-radius: 10px;
@@ -380,6 +383,7 @@ section.about-me .slide-box .flex-box .info {
   padding-top: 156px;
   width: 100%;
   height: 100vh;
+  height: calc(100vh - var(--vh, 0px));
   background: url(../image/about-bg.png) no-repeat bottom center;
   background-size: cover;
   transition: all 0.5s ease-in-out;
@@ -387,7 +391,7 @@ section.about-me .slide-box .flex-box .info {
 section.about-me .slide-box .flex-box .info .grid-box {
   position: relative;
   z-index: 2;
-  margin-top: 18%;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
 }
@@ -399,9 +403,19 @@ section.about-me .slide-box .flex-box .info .grid-box {
     grid-column-gap: 40px;
   }
 }
+@media all and (min-width: 768px) {
+  section.about-me .slide-box .flex-box .info .grid-box {
+    margin-top: 5vh;
+  }
+}
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box {
-    margin-top: 0;
+    margin-top: 3vh;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info .grid-box {
+    margin-top: -2%;
     display: grid;
     grid-template-columns: 3fr 9fr;
     grid-column-gap: 40px;
@@ -422,7 +436,7 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 0.25rem #000;
-  font-size: 25vw;
+  font-size: 5em;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
@@ -433,7 +447,7 @@ section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
     left: 0;
   }
 }
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1440px) {
   section.about-me .slide-box .flex-box .info .grid-box .about-title h2 {
     top: 32%;
     transform: translateY(-50%);
@@ -477,13 +491,18 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
 }
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
-    margin-top: 10%;
+    margin-top: 9vh;
     padding: 15% 3% 1% 10%;
   }
 }
 @media all and (min-width: 1440px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
     margin-top: 15%;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info .grid-box .yellow-box {
+    margin-top: 10%;
   }
 }
 section.about-me .slide-box .flex-box .info .grid-box .yellow-box .btn-area {
@@ -564,7 +583,7 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h
 }
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box h3 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-top: 1%;
   }
 }
@@ -581,13 +600,13 @@ section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box l
 }
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info .grid-box .yellow-box .content-box li {
-    font-size: 1.8em;
+    font-size: 1.6em;
     margin-top: 1%;
   }
 }
 section.about-me .slide-box .flex-box .info .btn {
   position: absolute;
-  bottom: -30%;
+  bottom: -20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -610,7 +629,7 @@ section.about-me .slide-box .flex-box .info .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info .btn button img {
-  width: 70%;
+  width: 50%;
   animation: updown 1s infinite;
 }
 @media all and (min-width: 768px) {
@@ -619,11 +638,23 @@ section.about-me .slide-box .flex-box .info .btn button img {
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
-  margin-top: 20%;
+  margin-top: 12%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
     margin-top: 20%;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
+    margin-top: 20vh;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box {
+    margin-top: 24vh;
     height: 100%;
   }
 }
@@ -657,6 +688,12 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title 
   }
 }
 @media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
+    top: -10%;
+    font-size: 7em;
+  }
+}
+@media all and (min-width: 1440px) {
   section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title h2 {
     font-size: 10em;
   }
@@ -698,6 +735,15 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title 
     transform: translateX(-50%);
     width: 70%;
     bottom: 20%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    bottom: 30%;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box {
@@ -816,21 +862,23 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .
     max-height: 14em;
   }
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
-    margin-top: 10%;
-    font-size: 1.5em;
-    max-height: 14em;
-  }
-}
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
     overflow: visible;
+    font-size: 1.2em;
+  }
+}
+@media all and (min-width: 1440px) {
+  section.about-me .slide-box .flex-box .info:nth-child(2) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
+    overflow: visible;
+    font-size: 1.5em;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn {
   position: absolute;
-  bottom: -20%;
+  bottom: -15%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(2) .btn {
@@ -846,7 +894,7 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(2) .btn button img {
-  width: 60%;
+  width: 50%;
   animation: updown 1s infinite;
 }
 @media all and (min-width: 768px) {
@@ -855,11 +903,23 @@ section.about-me .slide-box .flex-box .info:nth-child(2) .btn button img {
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
-  margin-top: 20%;
+  margin-top: 12%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
     margin-top: 20%;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
+    margin-top: 20vh;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box {
+    margin-top: 24vh;
     height: 100%;
   }
 }
@@ -893,6 +953,12 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title 
   }
 }
 @media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
+    top: -10%;
+    font-size: 7em;
+  }
+}
+@media all and (min-width: 1440px) {
   section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title h2 {
     font-size: 10em;
   }
@@ -934,6 +1000,15 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title 
     transform: translateX(-50%);
     width: 70%;
     bottom: 20%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    bottom: 30%;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box {
@@ -1052,21 +1127,23 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .
     max-height: 14em;
   }
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
-    margin-top: 10%;
-    font-size: 1.5em;
-    max-height: 14em;
-  }
-}
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
     overflow: visible;
+    font-size: 1.2em;
+  }
+}
+@media all and (min-width: 1440px) {
+  section.about-me .slide-box .flex-box .info:nth-child(3) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
+    overflow: visible;
+    font-size: 1.5em;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn {
   position: absolute;
-  bottom: -20%;
+  bottom: -15%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(3) .btn {
@@ -1082,7 +1159,7 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(3) .btn button img {
-  width: 60%;
+  width: 50%;
   animation: updown 1s infinite;
 }
 @media all and (min-width: 768px) {
@@ -1091,11 +1168,23 @@ section.about-me .slide-box .flex-box .info:nth-child(3) .btn button img {
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
-  margin-top: 20%;
+  margin-top: 12%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
     margin-top: 20%;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
+    margin-top: 20vh;
+    height: 100%;
+  }
+}
+@media all and (min-width: 1600px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box {
+    margin-top: 24vh;
     height: 100%;
   }
 }
@@ -1129,6 +1218,12 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title 
   }
 }
 @media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
+    top: -10%;
+    font-size: 7em;
+  }
+}
+@media all and (min-width: 1440px) {
   section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title h2 {
     font-size: 10em;
   }
@@ -1170,6 +1265,15 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title 
     transform: translateX(-50%);
     width: 70%;
     bottom: 20%;
+  }
+}
+@media all and (min-width: 1024px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .about-title .img-box img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    bottom: 30%;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box {
@@ -1288,21 +1392,23 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .
     max-height: 14em;
   }
 }
-@media all and (min-width: 768px) {
-  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
-    margin-top: 10%;
-    font-size: 1.5em;
-    max-height: 14em;
-  }
-}
 @media all and (min-width: 1024px) {
   section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
     overflow: visible;
+    font-size: 1.2em;
+  }
+}
+@media all and (min-width: 1440px) {
+  section.about-me .slide-box .flex-box .info:nth-child(4) .grid-box .yellow-box .content-box p {
+    margin-top: 5%;
+    overflow: visible;
+    font-size: 1.5em;
   }
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn {
   position: absolute;
-  bottom: -20%;
+  bottom: -15%;
 }
 @media all and (min-width: 768px) {
   section.about-me .slide-box .flex-box .info:nth-child(4) .btn {
@@ -1318,7 +1424,7 @@ section.about-me .slide-box .flex-box .info:nth-child(4) .btn button:hover {
   opacity: 0.5;
 }
 section.about-me .slide-box .flex-box .info:nth-child(4) .btn button img {
-  width: 60%;
+  width: 50%;
   animation: updown 1s infinite;
 }
 @media all and (min-width: 768px) {
@@ -1345,7 +1451,7 @@ section.about-me .corner-img:hover {
 
 /* Skills Styles */
 .skills {
-  background: url(../image/skill-bg.png) no-repeat center bottom;
+  background: url(../image/skill-bg.png) no-repeat center right;
   background-size: cover;
   padding-top: 40%;
 }
@@ -1367,17 +1473,18 @@ section.about-me .corner-img:hover {
   color: #fff;
   font-family: "SDSwagger";
   -webkit-text-stroke: 0.25rem #000;
-  font-size: 6rem;
+  font-size: 6em;
 }
 @media all and (min-width: 768px) {
   .skills .flex-box h2 {
-    font-size: 12rem;
+    font-size: 10em;
     -webkit-text-stroke-width: 1px;
   }
 }
 @media all and (min-width: 1024px) {
   .skills .flex-box h2 {
-    font-size: 9rem;
+    margin-top: 5vh;
+    font-size: 8em;
     -webkit-text-stroke-width: 1px;
   }
 }
@@ -1406,12 +1513,12 @@ section.about-me .corner-img:hover {
   background-color: #fff;
   justify-content: space-between;
   border: 5px solid #000;
-  padding: 3% 5%;
   border-radius: 15px;
   box-shadow: 15px 15px rgba(0, 0, 0, 0.5254901961);
   align-items: center;
 }
 .skills .skills-info .right-btn {
+  width: 10%;
   position: absolute;
   right: 0;
   top: 50%;
@@ -1419,15 +1526,17 @@ section.about-me .corner-img:hover {
   background: none;
   border: 0;
 }
-.skills .skills-info .right-btn img {
-  width: 60%;
-}
 @media all and (min-width: 768px) {
-  .skills .skills-info .right-btn img {
-    width: 90%;
+  .skills .skills-info .right-btn {
+    width: 5%;
   }
 }
+.skills .skills-info .right-btn img {
+  width: 100%;
+}
 .skills .skills-info .left-btn {
+  width: 10%;
+  z-index: 9;
   position: absolute;
   left: 0;
   top: 50%;
@@ -1435,28 +1544,47 @@ section.about-me .corner-img:hover {
   background: none;
   border: 0;
 }
+@media all and (min-width: 768px) {
+  .skills .skills-info .left-btn {
+    width: 5%;
+  }
+}
 .skills .skills-info .left-btn img {
-  width: 60%;
+  width: 100%;
 }
 @media all and (min-width: 768px) {
   .skills .skills-info .left-btn img {
-    width: 90%;
+    width: 100%;
   }
 }
 .skills .skills-info .skill-list .img-box {
   position: relative;
-  max-height: 270px;
+  padding: 4%;
 }
 .skills .skills-info .skill-list .img-box .chart {
+  position: absolute;
   opacity: 0;
-  width: 200px;
-  height: 200px;
+  width: 130px;
+  height: 130px;
   position: relative;
   left: 50%;
-  top: -240px;
   transform: translateX(-50%);
   border-radius: 50%;
   transition: all 0.1s ease-in-out;
+}
+@media all and (min-width: 768px) {
+  .skills .skills-info .skill-list .img-box .chart {
+    top: 11.5px;
+    width: 230px;
+    height: 230px;
+  }
+}
+@media all and (min-width: 1024px) {
+  .skills .skills-info .skill-list .img-box .chart {
+    top: 10px;
+    width: 200px;
+    height: 200px;
+  }
 }
 .skills .skills-info .skill-list .img-box .chart span.center {
   background: #fff;
@@ -1472,18 +1600,41 @@ section.about-me .corner-img:hover {
   font-weight: 400;
   transform: translate(-50%, -50%);
 }
-.skills img {
-  position: relative;
+@media all and (min-width: 768px) {
+  .skills .skills-info .skill-list .img-box .chart span.center {
+    width: 170px;
+    height: 170px;
+    font-size: 25px;
+    line-height: 170px;
+  }
+}
+@media all and (min-width: 1024px) {
+  .skills .skills-info .skill-list .img-box .chart span.center {
+    width: 150px;
+    height: 150px;
+    font-size: 25px;
+    line-height: 150px;
+  }
+}
+.skills .skills-info .skill-list .img-box img {
+  height: 150px;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.skills p {
+@media all and (min-width: 768px) {
+  .skills .skills-info .skill-list .img-box img {
+    height: 250px;
+  }
+}
+.skills .skills-info .skill-list p {
   position: relative;
+  margin-top: 2vh;
   left: 50%;
   transform: translate(-50%);
   width: 80%;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 .skills button {
   background: none;
@@ -1492,7 +1643,7 @@ section.about-me .corner-img:hover {
 
 section.Portfoilo {
   background: url(../image/profile-bg.png) no-repeat center top;
-  background-size: 100%;
+  background-size: cover;
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -1652,7 +1803,7 @@ section.pofol .info .content-box ul {
   padding: 3%;
 }
 section.pofol .info .content-box ul li {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 3%;
 }
 @media all and (min-width: 768px) {
@@ -1667,11 +1818,12 @@ section.pofol .info .content-box .button-box {
 @media all and (min-width: 768px) {
   section.pofol .info .content-box .button-box {
     justify-content: center;
-    margin-bottom: 2%;
+    margin-top: 15%;
   }
 }
 section.pofol .info .content-box .button-box button {
   padding: 1% 3%;
+  margin-bottom: 2%;
   background: none;
   border-radius: 5px;
   transition: all 0.1s ease-in;
@@ -1703,6 +1855,18 @@ section.pofol .info .img-box img {
 section.everland {
   background: url(../image/profile-bg.png) no-repeat center center;
   background-size: cover;
+}
+section.everland .info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 3px solid #000;
+}
+@media all and (min-width: 768px) {
+  section.everland .info {
+    flex-direction: row;
+  }
 }
 
 section.contact {

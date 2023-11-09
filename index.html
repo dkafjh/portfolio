@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height">
     <meta Description="자기소개 포트폴리오">
     <meta Author="조원태">
     <link rel="stylesheet" href="./css/index.css">
     <script>
-        (function(d) {
-          var config = {
-            kitId: 'nhr3shw',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        (function (d) {
+            var config = {
+                kitId: 'nhr3shw',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
         })(document);
-      </script>
+    </script>
+    <script>
+        function setViewportHeight() {
+            var viewportHeight = window.innerHeight;
+            document.documentElement.style.setProperty('--vh', `${viewportHeight * 0.0001}px`);
+        }
+
+        // 페이지 로드 시와 화면 크기 변경 시에 실행
+        window.addEventListener('resize', setViewportHeight);
+        window.addEventListener('load', setViewportHeight);
+    </script>
+
     <title>조원태 자기소개 포트폴리오</title>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
@@ -96,7 +109,7 @@
                             <div class="btn">
                                 <button class="down-btn"><img src="./image/down button.png" alt="downbtn"></button>
                             </div>
-                        </div><!--wrapper--> 
+                        </div><!--wrapper-->
                         <div class="corner-img">
                             <img src="./image/about-corner.png" alt="about-corner">
                         </div>
@@ -118,11 +131,14 @@
                                         </button>
                                     </div>
                                     <div class="content-box">
-                                        <h3>노력의 천재  "조원태"입니다</h3>
+                                        <h3>노력의 천재 "조원태"입니다</h3>
                                         <p>
                                             저의 장점 중 하나는 바로 끊임없이 도전하려는 노력과 끈기라고 생각합니다.<br><br>
-                                            작업을 하나 시작하게 되면 높은 집중력으로 작업을 빠르고 정확하게 끝내려고 하며, 어려운 일이 있더라도 포기하지 않고 끝까지 해내려고 노력합니다.<br><br>
-                                            이를 바탕으로 개발자라는 직업을 남들보다 늦게 시작했지만 이를 극복하기 위해서 훈련기관에서도 수업을 앞자리에 앉아 집중하여 들으려고 하였고, 귀가 후에도 막히는 부분이 있더라면 밤을 새서라도 해냈습니다. 또한 취직 후에도 매일 자기개발을 하는 시간을 최소 1시간 이상은 가질 것 입니다. 
+                                            작업을 하나 시작하게 되면 높은 집중력으로 작업을 빠르고 정확하게 끝내려고 하며, 어려운 일이 있더라도 포기하지 않고 끝까지 해내려고
+                                            노력합니다.<br><br>
+                                            이를 바탕으로 개발자라는 직업을 남들보다 늦게 시작했지만 이를 극복하기 위해서 훈련기관에서도 수업을 앞자리에 앉아 집중하여 들으려고
+                                            하였고, 귀가 후에도 막히는 부분이 있더라면 밤을 새서라도 해냈습니다. 또한 취직 후에도 매일 자기개발을 하는 시간을 최소 1시간 이상은
+                                            가질 것 입니다.
                                         </p>
                                     </div><!--content-box-->
                                 </div>
@@ -130,7 +146,7 @@
                             <div class="btn">
                                 <button class="down-btn"><img src="./image/down button.png" alt="downbtn"></button>
                             </div>
-                        </div> <!--wrapper-->                     
+                        </div> <!--wrapper-->
                     </li>
                     <li class="info" id="effort">
                         <div class="wrapper">
@@ -153,7 +169,8 @@
                                         <p>
                                             어떠한 상황에서도 긍정적으로! <br><br>
                                             저는 항상 긍정적으로 생각하려고 노력합니다.이러한 긍정적인 생각은 포기하지 않는 끈기에 밑밭침이 됩니다.<br><br>
-                                            긍정적인 생각은 저 뿐만 아니라 주변 사람들에게도 긍정적인 에너지를 줄 수 있습니다. 이는 팀 작업을 하는데에도 좋은 시너지 효과를 낼 수 있으며, 효과적인 작업을 하는데 이바지가 됩니다.
+                                            긍정적인 생각은 저 뿐만 아니라 주변 사람들에게도 긍정적인 에너지를 줄 수 있습니다. 이는 팀 작업을 하는데에도 좋은 시너지 효과를 낼
+                                            수 있으며, 효과적인 작업을 하는데 이바지가 됩니다.
                                         </p>
                                     </div><!--content-box-->
                                 </div>
@@ -178,7 +195,8 @@
                                         <p>
                                             사회복지학과에서 가장 필요한 요소였던 의사소통기술은 저에게 가장 큰 무기가 될 수 있을 것 입니다.<br><br>
                                             퍼블리셔라는 직업은 디자이너와 개발자 사이에서의 소통창구가 되어야 한다고 생각하기 때문입니다.<br><br>
-                                            저는 이를 위해서 웹디자인 기능사 시험을 보았으며 디자이너와 개발자 사이의 소통을 다양한 시각에서 이해하고 원만한 합의점을 찾아낼수 있습니다.   
+                                            저는 이를 위해서 웹디자인 기능사 시험을 보았으며 디자이너와 개발자 사이의 소통을 다양한 시각에서 이해하고 원만한 합의점을 찾아낼수
+                                            있습니다.
                                         </p>
                                     </div>
                                 </div>
@@ -192,7 +210,7 @@
             </div><!--slide-box-->
         </section>
 
-        
+
         <section class="skills">
             <div class="wrapper">
                 <div class="flex-box">
@@ -201,7 +219,8 @@
                 </div>
                 <hr>
                 <div class="skills-info">
-                    <button class="left-btn" onclick="slider.prev()"><img src="./image/rightbutton.png" alt="rightbutton"></button>
+                    <button class="left-btn" onclick="slider.prev()"><img src="./image/rightbutton.png"
+                            alt="rightbutton"></button>
                     <div class="slide-box" id="slider">
                         <div class="skill-list">
                             <div class="img-box">
@@ -231,7 +250,7 @@
                                 <img src="./image/jquery.png" alt="jquery logo">
                                 <div class="chart doughnut80"><span class="center">80%</span></div>
                             </div>
-                            
+
                             <p>자바스크립트를 기반으로 제이쿼리를 더 효율적으로 사용할 수 있으며, 다양한 플러그인의 활용도 가능합니다</p>
                         </div>
                         <div class="skill-list">
@@ -270,11 +289,12 @@
                             <p>피그마를 사용한 협업이 가능합니다.</p>
                         </div>
                     </div>
-                    <button class="right-btn" onclick="slider.next()"><img src="./image/leftbutton.png" alt="leftbutton"></button>
+                    <button class="right-btn" onclick="slider.next()"><img src="./image/leftbutton.png"
+                            alt="leftbutton"></button>
                 </div><!--skills info-->
             </div><!--slide-box-->
         </section>
-        
+
         <section class="Portfoilo">
             <div class="wrapper">
                 <h2>Portfoilo</h2>
@@ -377,10 +397,15 @@
                                 <input type="tel" id="phone">
                             </div>
                             <div class="sns">
-                                <button><a target="_blank" href="https://www.instagram.com/taiwon_no.1"><img src="./image/instagram.png" alt="insta"></a></button>
-                                <button class="kakao-btn"><a href="#" onclick="return false"><img src="./image/kakaotalk.png" alt="kakao"></a></button>
-                                <button><a target="_blank" href="https://www.facebook.com/profile.php?id=100005438408713&locale=ko_KR"><img src="./image/facebook.png" alt="facebook"></a></button>
-                                <button><a target="_blank" href="https://github.com/dkafjh"><img src="./image/git hub.png" alt="git hub"></a></button>
+                                <button><a target="_blank" href="https://www.instagram.com/taiwon_no.1"><img
+                                            src="./image/instagram.png" alt="insta"></a></button>
+                                <button class="kakao-btn"><a href="#" onclick="return false"><img
+                                            src="./image/kakaotalk.png" alt="kakao"></a></button>
+                                <button><a target="_blank"
+                                        href="https://www.facebook.com/profile.php?id=100005438408713&locale=ko_KR"><img
+                                            src="./image/facebook.png" alt="facebook"></a></button>
+                                <button><a target="_blank" href="https://github.com/dkafjh"><img
+                                            src="./image/git hub.png" alt="git hub"></a></button>
                             </div>
                         </div>
                         <div class="textarea">
@@ -397,9 +422,12 @@
             <button id="top-btn">TOP ↑</button>
         </section>
     </main>
-    <footer><span>@Copyright Chowontai  ALL Right Reserved</span><h1><img src="./image/logo-black.png" alt="logo"></h1></footer>
+    <footer><span>@Copyright Chowontai ALL Right Reserved</span>
+        <h1><img src="./image/logo-black.png" alt="logo"></h1>
+    </footer>
 </body>
 <script src="./js/skill.js" defer></script>
 <script src="./js/hamburgerbtn.js" defer></script>
 <script src="./js/index.js" defer></script>
+
 </html>
